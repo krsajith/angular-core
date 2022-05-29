@@ -1,0 +1,6 @@
+<ng-container *ngIf="name;else other_content">
+    <p>dynamic-form works! {{name.length}}</p>
+</ng-container>
+
+
+<ng-template #other_content>Loading...</ng-template>
