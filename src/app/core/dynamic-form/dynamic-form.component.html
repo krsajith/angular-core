@@ -1,6 +1,24 @@
-<ng-container *ngIf="name;else other_content">
-    <p>dynamic-form works! {{name.length}}</p>
+<ng-container *ngIf="ready; else loading">
+  <form [formGroup]="formGroup">
+    <ng-container *ngFor="let field of page.fields; index as i">
+      <div [ngSwitch]="field.type">
+        <label>{{ field.label }}<br>
+          <input
+            *ngSwitchCase="'text'"
+            formControlName="{{ field.name }}"
+            type="text"/>
+
+          <select
+            *ngSwitchCase="'select'"
+            formControlName="{{ field.name }}">
+            <option>Select</option>
+        </select>
+
+        </label>
+      </div>
+    </ng-container>
+  </form>
+  <!-- {{ formGroup.value | json }} -->
 </ng-container>
 
-
-<ng-template #other_content>Loading...</ng-template>
+<ng-template #loading>Loading...</ng-template>

@@ -1,0 +1,19 @@
+{
+    "fields":[
+        {
+            "name":"name",
+            "type":"text",
+            "label":"Name"
+        },
+        {
+            "name":"country",
+            "type":"select",
+            "label":"Country"
+        },
+        {
+            "name":"state",
+            "type":"select",
+            "label":"State"
+        }
+    ]
+}
