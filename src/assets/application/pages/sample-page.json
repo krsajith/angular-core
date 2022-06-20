@@ -1,0 +1,27 @@
+{
+    "fields": [
+        {
+            "name": "name",
+            "type": "text",
+            "label": "Name"
+        },
+        {
+            "name": "region",
+            "type": "select",
+            "label": "region",
+            "store": "regions",
+            "valueField":"code",
+            "labelField":"name"
+        },
+        {
+            "name": "country",
+            "type": "select",
+            "label": "Country",
+            "store": "countries",
+            "parentField": "region",
+            "jonColumn": "region",
+            "valueField":"code",
+            "labelField":"name"
+        }
+    ]
+}

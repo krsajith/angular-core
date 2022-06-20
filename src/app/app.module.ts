@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';
 import { ComponentHostDirective } from './core/component-host.directive';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ParentFilterPipe } from './core/pipe/parent-filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     DynamicFormComponent,
-    ComponentHostDirective
+    ComponentHostDirective,
+    ParentFilterPipe
   ],
   imports: [
     BrowserModule,
