@@ -7,13 +7,19 @@ import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component
 import { ComponentHostDirective } from './core/component-host.directive';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ParentFilterPipe } from './core/pipe/parent-filter.pipe';
+import { PopupComponent } from './popup/popup.component';
+import { RedComponent } from './sample/red/red.component';
+import { BaseComponent } from './base/base.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DynamicFormComponent,
     ComponentHostDirective,
-    ParentFilterPipe
+    ParentFilterPipe,
+    PopupComponent,
+    RedComponent,
+    BaseComponent
   ],
   imports: [
     BrowserModule,

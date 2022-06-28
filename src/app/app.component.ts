@@ -4,6 +4,8 @@ import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component
 import { Page } from "src/app/core/domain/page";
 import { firstValueFrom } from 'rxjs';
 import { JsonService } from './core/api/json.service';
+import { PopupComponent } from './popup/popup.component';
+import { RedComponent } from './sample/red/red.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -14,12 +16,17 @@ export class AppComponent implements OnInit {
 
   @ViewChild(ComponentHostDirective, { static: true }) componentHost!: ComponentHostDirective;
 
+  @ViewChild(PopupComponent, { static: true }) popup!: PopupComponent;
+
   constructor(private jsonService: JsonService) {
 
   }
 
   ngOnInit(): void {
-    this.init();
+    // this.init();
+
+    // this.popup.show(RedComponent);
+
   }
 
 
@@ -31,6 +38,10 @@ export class AppComponent implements OnInit {
     const page = await firstValueFrom(this.jsonService.get<Page>('/assets/application/pages/sample-page.json'));
 
     componentRef.instance.init(page);
+  }
+
+  showPopup() {
+    this.popup.show(RedComponent)
   }
 
 }

@@ -48,18 +48,10 @@ export class DynamicFormComponent implements OnInit {
 
       //any other field depends on this field
       if (parentFields.has(field.name)) {
-        // formControl.valueChanges.subscribe((value) =>
-        //   this.valueChanged(field.name, value)
-        // );
         this.parentValues[field.name]=formControl.valueChanges;
       }
     }
 
     console.log(this.formGroup,this.stores);
-  }
-
-  valueChanged(name: string, value: any): void {
-    this.parentValues[name] = value;
-    console.log(name, value);
   }
 }
