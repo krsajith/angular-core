@@ -11,6 +11,7 @@ import { PopupComponent } from './popup/popup.component';
 import { RedComponent } from './sample/red/red.component';
 import { MultiSelectComponent } from './core/multi-select/multi-select.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { ClickAwayDirective } from './core/directives/click-away.directive';
 // import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
@@ -22,7 +23,7 @@ import { OverlayModule } from '@angular/cdk/overlay';
     PopupComponent,
     RedComponent,
     MultiSelectComponent,
-    // ClickAwayDirective
+    ClickAwayDirective
   ],
   imports: [
     BrowserModule,

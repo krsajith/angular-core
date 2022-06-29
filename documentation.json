@@ -984,17 +984,153 @@
             "implements": [
                 "Store"
             ]
+        },
+        {
+            "name": "SelectionModel",
+            "id": "class-SelectionModel-e995a274029a33e679a97e5b199972db54fbdddbdf15c6cab87ae89223becad6f961b4c218d0f7b3d32492c13c85f94277e0a10131ff9946b276e0b444129c59",
+            "file": "src/app/core/domain/selection-model.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "class",
+            "sourceCode": "export class SelectionModel<T> {\n    private _selectedItems: Array<any> = [];\n\n    test = 'test';\n\n    constructor(private _isMultiple: boolean = false) {\n    }\n\n    toggle(value: T): void {\n        if (this._selectedItems.includes(value)) {\n            this._selectedItems.splice(this._selectedItems.indexOf(value), 1);\n        } else {\n            this._selectedItems.push(value);\n        }\n    }\n    get selected(): Array<T> {\n        return this._selectedItems;\n    }\n    \n    isSelected(value: T): boolean {\n        return this._selectedItems.includes(value);\n    }\n}\n\n",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "_isMultiple",
+                        "type": "boolean",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "false"
+                    }
+                ],
+                "line": 4,
+                "jsdoctags": [
+                    {
+                        "name": "_isMultiple",
+                        "type": "boolean",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "defaultValue": "false",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "properties": [
+                {
+                    "name": "_selectedItems",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Array<any>",
+                    "optional": false,
+                    "description": "",
+                    "line": 2,
+                    "modifierKind": [
+                        121
+                    ]
+                },
+                {
+                    "name": "test",
+                    "defaultValue": "'test'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "methods": [
+                {
+                    "name": "isSelected",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "boolean",
+                    "typeParameters": [],
+                    "line": 20,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "toggle",
+                    "args": [
+                        {
+                            "name": "value",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 9,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "value",
+                            "type": "T",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "indexSignatures": [],
+            "accessors": {
+                "selected": {
+                    "name": "selected",
+                    "getSignature": {
+                        "name": "selected",
+                        "type": "",
+                        "returnType": "Array<T>",
+                        "line": 16
+                    }
+                }
+            },
+            "inputsClass": [],
+            "outputsClass": [],
+            "hostBindings": [],
+            "hostListeners": []
         }
     ],
     "directives": [
         {
             "name": "ClickAwayDirective",
-            "id": "directive-ClickAwayDirective-4c45288248ed070e08e745997d6bd9a0eccc6bd1ed8f28defcb6dd8aba47a7fd5a074c5a0686929acecd046c3483eb89c7159394f37441ec797fdca2758f0384",
+            "id": "directive-ClickAwayDirective-a58a7e1b1252acb73711479f3a56c8339cbe73ed26ff756b47c6f878d746c224faeb3d27d0d0d584d049c6ebb647396df06cf5eae8bc7b797f79481e55d51857",
             "file": "src/app/core/directives/click-away.directive.ts",
             "type": "directive",
             "description": "<p>Example Usage  &lt;a (clickAway)=&quot;showChildren=false&quot;/&gt;</p>\n",
             "rawdescription": "\n\nExample Usage  <a (clickAway)=\"showChildren=false\"/>\n",
-            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\n\n/**\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\n */\n@Directive({\n    selector: '[clickAway]'\n})\nexport class ClickAwayDirective {\n    constructor(private _elementRef : ElementRef) {\n        // console.log('ClickAway Directive Constructor');\n    }\n \n    @Output()\n    public clickAway = new EventEmitter();\n \n    @HostListener('document:click', ['$event.target'])\n    public onClick(targetElement:HTMLElement) {\n        console.log('ClickAway Directive');\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\n        if (!clickedInside) {\n            this.clickAway.emit(null);\n        }\n    }\n}",
+            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\n\n/**\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\n */\n@Directive({\n    selector: '[clickAway]'\n})\nexport class ClickAwayDirective {\n    constructor(private _elementRef : ElementRef) {\n        console.log('ClickAway Directive Constructor');\n    }\n \n    @Output()\n    public clickAway = new EventEmitter();\n \n    @HostListener('document:click', ['$event.target'])\n    public onClick(targetElement:HTMLElement) {\n        console.log('ClickAway Directive');\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\n        if (!clickedInside) {\n            this.clickAway.emit(null);\n        }\n    }\n}",
             "selector": "[clickAway]",
             "providers": [],
             "inputsClass": [],
@@ -2096,7 +2232,7 @@
         },
         {
             "name": "MultiSelectComponent",
-            "id": "component-MultiSelectComponent-ba2cc222c8e173b94ce48d1fb53e17dc4fa26a00874532eb3f1ed86b53a28c53c0c7469e9e0155098aedddf1fd3b4c6a24314122efdfcdb3ea64268b3409da77",
+            "id": "component-MultiSelectComponent-9b1973bcee0d3c22d3e7364c828bfbf486c7a09355e7183d3070f5e0f771c87fc1ef4b023a13461b8df0529dbb040c49d0cc6c5fd8b8dab3b5683287a84222fc",
             "file": "src/app/core/multi-select/multi-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2123,7 +2259,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 22,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -2131,7 +2267,7 @@
                     "name": "options",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 39,
+                    "line": 41,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -2140,7 +2276,7 @@
                     "defaultValue": "'value'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 }
@@ -2154,7 +2290,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 22
                 },
                 {
                     "name": "isOpen",
@@ -2164,7 +2300,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 20
+                    "line": 21
                 },
                 {
                     "name": "selectedLabel",
@@ -2173,17 +2309,17 @@
                     "type": "string | ",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 27
                 },
                 {
                     "name": "selectedOptions",
                     "defaultValue": "new SelectionModel(true)",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "",
+                    "type": "SelectionModel<any>",
                     "optional": false,
                     "description": "",
-                    "line": 25
+                    "line": 26
                 },
                 {
                     "name": "onChange",
@@ -2239,7 +2375,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 44,
+                    "line": 47,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2267,7 +2403,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 33,
+                    "line": 34,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2368,7 +2504,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\nimport { Component, forwardRef, Input } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\n\n@Component({\n  selector: 'app-multi-select',\n  templateUrl: './multi-select.component.html',\n  styleUrls: ['./multi-select.component.css'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => MultiSelectComponent),\n      multi: true\n    }\n  ]  \n})\nexport class MultiSelectComponent extends BaseConrolComponent {\n\n  isOpen = false;\n  _options!: any[];\n  @Input() label: string = 'label';\n  @Input() value: string = 'value';\n\n  selectedOptions = new SelectionModel(true);\n  selectedLabel!: string | unknown;\n\n  constructor(){\n    super();\n    console.log(this.selectedOptions);\n  }\n\n  writeValue(value: any[]): void {\n    console.log('writeValue', value);\n  }\n  \n\n  @Input()\n  public set options(options: any[]) {\n    console.log('options', options);\n    this._options = options;\n  }\n\n  toggle(option: any) {\n    this.selectedOptions.toggle(option);\n    this.onChange(this.selectedOptions.selected.map((o:any) => o[this.value]));\n    this.selectedLabel = this.selectedOptions.selected.map((o:any) => o[this.label]).join(', ');\n    \n  }\n}\n",
+            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\nimport { Component, forwardRef, Input } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\n\n\n@Component({\n  selector: 'app-multi-select',\n  templateUrl: './multi-select.component.html',\n  styleUrls: ['./multi-select.component.css'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => MultiSelectComponent),\n      multi: true\n    }\n  ]  \n})\nexport class MultiSelectComponent extends BaseConrolComponent {\n\n  isOpen = false;\n  _options!: any[];\n  @Input() label: string = 'label';\n  @Input() value: string = 'value';\n\n  selectedOptions:SelectionModel<any> = new SelectionModel(true);\n  selectedLabel!: string | unknown;\n\n  constructor(){\n    super();\n    console.log(this.selectedOptions);\n  }\n\n  writeValue(value: any[]): void {\n    this.selectedOptions.select(value);\n    console.log('writeValue', value);\n  }\n  \n\n  @Input()\n  public set options(options: any[]) {\n    console.log('options', options);\n    this._options = options;\n    this.selectedOptions= new SelectionModel(true);\n  }\n\n  toggle(option: any) {\n    console.log(this.selectedOptions.selected);\n    this.selectedOptions.toggle(option);\n    this.onChange(this.selectedOptions.selected.map((o:any) => o[this.value]));\n    this.selectedLabel = this.selectedOptions.selected.map((o:any) => o[this.label]).join(', ');\n    \n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2383,7 +2519,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 26
+                "line": 27
             },
             "extends": "BaseConrolComponent",
             "accessors": {
@@ -2403,7 +2539,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 39,
+                        "line": 41,
                         "jsdoctags": [
                             {
                                 "name": "options",
@@ -2418,7 +2554,7 @@
                     }
                 }
             },
-            "templateData": "<span (click)=\"isOpen = !isOpen\" type=\"button\" cdkOverlayOrigin #trigger=\"cdkOverlayOrigin\"\n  class=\"\n    appearance-none\n    rounded\n    border border-gray-500\n    px-2\n    py-2\n    text-sm text-gray-600\n    hover:border-blue-300\n    focus:border-blue-400\n    focus:outline-none\n    flex\n  \"\n>\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\n\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    class=\"h-5 w-5\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n  >\n    <path\n      fill-rule=\"evenodd\"\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\n      clip-rule=\"evenodd\"\n    />\n  </svg>\n</span>\n\n<ng-template \n  cdkConnectedOverlay\n  [cdkConnectedOverlayOrigin]=\"trigger\"\n  [cdkConnectedOverlayOpen]=\"isOpen\"\n>\n  <span class=\"flex flex-col\">\n    <label *ngFor=\"let option of _options\">\n      <input type=\"checkbox\"  [checked]=\"selectedOptions?.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\n    </label>\n  </span>\n</ng-template>\n"
+            "templateData": "<span (click)=\"isOpen = !isOpen\" type=\"button\" cdkOverlayOrigin #trigger=\"cdkOverlayOrigin\"\n  class=\"\n    appearance-none\n    rounded\n    border border-gray-500\n    px-2\n    py-2\n    text-sm text-gray-600\n    hover:border-blue-300\n    focus:border-blue-400\n    focus:outline-none\n    flex\n  \"\n>\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\n\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    class=\"h-5 w-5\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n  >\n    <path\n      fill-rule=\"evenodd\"\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\n      clip-rule=\"evenodd\"\n    />\n  </svg>\n</span>\n\n<ng-template \n  cdkConnectedOverlay\n  [cdkConnectedOverlayOrigin]=\"trigger\"\n  [cdkConnectedOverlayOpen]=\"isOpen\"\n>\n  <span class=\"flex flex-col\">\n    <label *ngFor=\"let option of _options\">\n      <input type=\"checkbox\"  [checked]=\"selectedOptions.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\n    </label>\n  </span>\n</ng-template>\n"
         },
         {
             "name": "PopupComponent",
@@ -2648,13 +2784,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-c8061ca2b5fcdf1e2dd524f2612b64745e93961980795ac87f7cafeeed817a4855f30233ed6fb9b1f20b3ebb282f9f809455c57f023548f541263c9471297fff",
+            "id": "module-AppModule-12df67de66467d22c1ca81e259ac8dc72b1e7da7075a95f8bfdcfc7575cd48309533bd3d49b9d2f3926bf3db5db1304348cae23f7095d71ae010ab21525a0702",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DynamicFormComponent,\n    ComponentHostDirective,\n    ParentFilterPipe,\n    PopupComponent,\n    RedComponent,\n    MultiSelectComponent,\n    // ClickAwayDirective\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    OverlayModule,\n    FormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\nimport { ClickAwayDirective } from './core/directives/click-away.directive';\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DynamicFormComponent,\n    ComponentHostDirective,\n    ParentFilterPipe,\n    PopupComponent,\n    RedComponent,\n    MultiSelectComponent,\n    ClickAwayDirective\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    OverlayModule,\n    FormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -2665,6 +2801,9 @@
                     "elements": [
                         {
                             "name": "AppComponent"
+                        },
+                        {
+                            "name": "ClickAwayDirective"
                         },
                         {
                             "name": "ComponentHostDirective"
@@ -2798,7 +2937,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<MultiSelectComponent>",
-                "defaultValue": "(args) => ({\n  props: args,\n  template: `<form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n                 <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  `,\n})"
+                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  <form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n  `,\n})"
             },
             {
                 "name": "YourStory",
@@ -2869,7 +3008,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<MultiSelectComponent>",
-                    "defaultValue": "(args) => ({\n  props: args,\n  template: `<form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n                 <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  `,\n})"
+                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  <form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n  `,\n})"
                 },
                 {
                     "name": "YourStory",
@@ -2991,6 +3130,15 @@
                 "type": "interface",
                 "linktype": "interface",
                 "name": "Page",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/core/domain/selection-model.ts",
+                "type": "class",
+                "linktype": "classe",
+                "name": "SelectionModel",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
                 "status": "low"

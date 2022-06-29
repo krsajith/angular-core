@@ -9,7 +9,7 @@ import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angula
 })
 export class ClickAwayDirective {
     constructor(private _elementRef : ElementRef) {
-        // console.log('ClickAway Directive Constructor');
+        console.log('ClickAway Directive Constructor');
     }
  
     @Output()
