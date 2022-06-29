@@ -1,6 +1,6 @@
 import { Component, OnInit, Type, ViewChild } from '@angular/core';
-import { BaseComponent } from '../base/base.component';
 import { ComponentHostDirective } from '../core/component-host.directive';
+import { BaseComponent } from '../core/controls/base-conrol/base.component';
 
 @Component({
   selector: 'app-popup',

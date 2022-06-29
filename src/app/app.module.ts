@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';
 import { ComponentHostDirective } from './core/component-host.directive';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ParentFilterPipe } from './core/pipe/parent-filter.pipe';
 import { PopupComponent } from './popup/popup.component';
 import { RedComponent } from './sample/red/red.component';
-import { BaseComponent } from './base/base.component';
+import { MultiSelectComponent } from './core/multi-select/multi-select.component';
+import { OverlayModule } from '@angular/cdk/overlay';
+// import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
   declarations: [
@@ -19,13 +21,16 @@ import { BaseComponent } from './base/base.component';
     ParentFilterPipe,
     PopupComponent,
     RedComponent,
-    BaseComponent
+    MultiSelectComponent,
+    // ClickAwayDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    OverlayModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

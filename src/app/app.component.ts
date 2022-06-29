@@ -6,6 +6,9 @@ import { firstValueFrom } from 'rxjs';
 import { JsonService } from './core/api/json.service';
 import { PopupComponent } from './popup/popup.component';
 import { RedComponent } from './sample/red/red.component';
+import {SelectionModel} from '@angular/cdk/collections'
+
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -18,6 +21,21 @@ export class AppComponent implements OnInit {
 
   @ViewChild(PopupComponent, { static: true }) popup!: PopupComponent;
 
+  model = new SelectionModel(true);
+
+  data = {id: 1, name: 'sajith'};
+
+  selection = [];
+
+  options = [
+    {value:'1',label:'one'},
+    {value:'2',label:'two'},
+    {value:'3',label:'three'},
+    {value:'4',label:'four'},
+    {value:'5',label:'five'},
+    {value:'6',label:'six'},
+  ]
+
   constructor(private jsonService: JsonService) {
 
   }
@@ -26,6 +44,20 @@ export class AppComponent implements OnInit {
     // this.init();
 
     // this.popup.show(RedComponent);
+
+    const model = new SelectionModel(false);
+
+    model.changed.subscribe(() => {
+      console.log(model.selected);
+    });
+    
+    
+    model.toggle("1");
+    model.toggle("8");
+    model.toggle("1");
+    // console.log(model.selected);
+
+    
 
   }
 
@@ -42,6 +74,10 @@ export class AppComponent implements OnInit {
 
   showPopup() {
     this.popup.show(RedComponent)
+  }
+
+  test($event: any) {
+   this.model.toggle(this.data);
   }
 
 }
