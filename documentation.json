@@ -2,7 +2,7 @@
     "pipes": [
         {
             "name": "ParentFilterPipe",
-            "id": "pipe-ParentFilterPipe-5495ef0ed94b0ca4c3c8650b23762bc446067ae66ddd046aa0b7353fd40dac4a2722262a14f370b4174363e2609a5bf81ce58177ccba51b070de302ba74b042f",
+            "id": "pipe-ParentFilterPipe-6f6611c47b2de4d8b0fa1bb0b3d71466b42e0eafabcbcc2da27c28d44e7075933095cace90b02d40d9c9b9717fb58206b74b515e63d9c5eb7f72fc03cc8dde6d",
             "file": "src/app/core/pipe/parent-filter.pipe.ts",
             "type": "pipe",
             "deprecated": false,
@@ -58,18 +58,18 @@
                 }
             ],
             "ngname": "parentFilter",
-            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\n\n@Pipe({\n  name: 'parentFilter'\n})\nexport class ParentFilterPipe implements PipeTransform {\n\n  transform(list : any[] | null, ...args: any[]): any[] {\n    console.log(list, args);\n    return list || [];\n  }\n\n}\n"
+            "sourceCode": "import { Pipe, PipeTransform } from '@angular/core';\r\n\r\n@Pipe({\r\n  name: 'parentFilter'\r\n})\r\nexport class ParentFilterPipe implements PipeTransform {\r\n\r\n  transform(list : any[] | null, ...args: any[]): any[] {\r\n    console.log(list, args);\r\n    return list || [];\r\n  }\r\n\r\n}\r\n"
         }
     ],
     "interfaces": [
         {
             "name": "Field",
-            "id": "interface-Field-56104cbc1642855714a161de9210ea2fc682a6263719b0954bfa106640ff9fd5d347d7d36953eb1aaeb4daac150d75c7aa2a2f9e263018fe9cb113b527706c5d",
+            "id": "interface-Field-0ebc3e4dd7a12c8323081e691cad66c287e16ace0b8112c89a40d1c208452ce3cc106386a20e9b47a8f0b6d209d655d9afa47c66222cd641ec7803e68ebb9097",
             "file": "src/app/core/domain/field.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface Field {\n    name: string;\n    type: string;\n    label: string;\n    value: any;\n    store: string;\n    required?: boolean;\n    order: number;\n    controlType: string;\n    parentField:string\n    labelField:string\n    valueField:string\n}\n",
+            "sourceCode": "export interface Field {\r\n    name: string;\r\n    type: string;\r\n    label: string;\r\n    value: any;\r\n    store: string;\r\n    required?: boolean;\r\n    order: number;\r\n    controlType: string;\r\n    parentField:string\r\n    labelField:string\r\n    valueField:string\r\n}\r\n",
             "properties": [
                 {
                     "name": "controlType",
@@ -177,12 +177,12 @@
         },
         {
             "name": "Page",
-            "id": "interface-Page-6b405c726df27e52fce9cebcf269491f7ee47bd57c62de1a7ec37483d2efa3357f64fcb8ae87f4de1bb938052133b11b7e42342426e186e444f9be269473c0c0",
+            "id": "interface-Page-bec4c73dbe8ee5f5f8056994f6b54be0c6c0ae2efd15c2e32b8c13fb2b4dcaf5a95ff9fc0c9c1c1ffb1bbe87eea1f95141c70d1d5392833e8515a47600fd8737",
             "file": "src/app/core/domain/page.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Field } from \"./field\";\n\nexport interface Page {\n    fields: Field[];\n    name?: string;\n    title?: string;\n    description?: string;\n    url?:string\n}\n",
+            "sourceCode": "import { Field } from \"./field\";\r\n\r\nexport interface Page {\r\n    fields: Field[];\r\n    name?: string;\r\n    title?: string;\r\n    description?: string;\r\n    url?:string\r\n}\r\n",
             "properties": [
                 {
                     "name": "description",
@@ -236,12 +236,12 @@
         },
         {
             "name": "Store",
-            "id": "interface-Store-973019ced34a269a20e2254258fd540fd380407d62ffcb1c9cefd4e4cf7dc47bb1726026df7a9625aa18c6d90813b68141c748f73da736fb23d668ee247313d6",
+            "id": "interface-Store-4ddea337a38fa4adee46ec0bb60d8dc5f25adc79c0c7f2a8107536859d65fd219056d050b2c2ddbcf024a857b48fc4ded3b2ffe3e2b52ca213e8cf8964bc63c2",
             "file": "src/app/core/store/store.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { Observable } from \"rxjs\";\n\nexport interface Store<T> {\n    values(): Observable<T[]>;\n    // filter(filter: any): Observable<T[]>;\n}\n",
+            "sourceCode": "import { Observable } from \"rxjs\";\r\n\r\nexport interface Store<T> {\r\n    values(): Observable<T[]>;\r\n    // filter(filter: any): Observable<T[]>;\r\n}\r\n",
             "properties": [],
             "indexSignatures": [],
             "kind": 167,
@@ -260,12 +260,12 @@
         },
         {
             "name": "StoreConfig",
-            "id": "interface-StoreConfig-89b6191a75f25f363287d58b06257cb5cee938723ab2f2786307cc60362c292eb41aefab9f7cadf49611c42786c51fc3ed9aec624a991d9ecb143132cf00e1a3",
+            "id": "interface-StoreConfig-049e7788e4fcc0b2bb772ab99feaad16006c943418237811127916acdedb4e5d426560e5129a303a09169a87a9a2cb51cc439537aae893aebc2861fbdf76ea4a",
             "file": "src/app/core/store/store-config.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface StoreConfig {\n    storeType:  string;\n    baseUrl:    string;\n    path:       string;\n    keyField:   string;\n    labelField: string;\n}\n\n",
+            "sourceCode": "export interface StoreConfig {\r\n    storeType:  string;\r\n    baseUrl:    string;\r\n    path:       string;\r\n    keyField:   string;\r\n    labelField: string;\r\n}\r\n\r\n",
             "properties": [
                 {
                     "name": "baseUrl",
@@ -321,12 +321,12 @@
     "injectables": [
         {
             "name": "ApiService",
-            "id": "injectable-ApiService-a870c6f6eab6a341570cb2525fb0f52469a5173bae4fe41975db1f1bf911175866b85c1d55677ab14240731be55ea8235d973c7a5b499add56752c885791677e",
+            "id": "injectable-ApiService-b646e4047afcb6cfa7528a11c2853f5b3be8c92845764152df6ec729cb314d27b4e512bf77077e86ac0ec51e99ee00cb46a6600d107001b571274782e4fd63b8",
             "file": "src/app/core/api/api.service.ts",
             "properties": [
                 {
                     "name": "languages",
-                    "defaultValue": "[\n    { code: 'EN', name: 'Engilish' },\n    { code: 'FR', name: 'French' },\n    { code: 'PT', name: 'Portuguese' },\n  ]",
+                    "defaultValue": "[\r\n    { code: 'EN', name: 'Engilish' },\r\n    { code: 'FR', name: 'French' },\r\n    { code: 'PT', name: 'Portuguese' },\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -541,7 +541,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient, HttpResponse } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { environment } from 'src/environments/environment';\n\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class ApiService {\n\n  languages = [\n    { code: 'EN', name: 'Engilish' },\n    { code: 'FR', name: 'French' },\n    { code: 'PT', name: 'Portuguese' },\n  ]\n\n  constructor(private http: HttpClient) {\n  }\n\n  post(path: string, entity: any): Observable<any> {\n    return this.http.post<HttpResponse<any>>(`${environment.apiEndpoint}/${path}`, entity);\n  }\n\n  postEvents(path: string, entity: any): Observable<any> {\n    return this.http.post(`${environment.apiEndpoint}/${path}`, entity, {\n      reportProgress: true,\n      observe: 'events',\n      responseType: 'text'\n    });\n  }\n\n  get(path: string): Observable<any[]> {\n    return this.http.get<any[]>(`${environment.apiEndpoint}${path}`);\n  }\n\n  getById(path: string, id: string): Observable<any> {\n    return this.http.get<any>(`${environment.apiEndpoint}/${path}/${id}`);\n  }\n\n  createUpload(path: string, entity: any): Observable<HttpResponse<any>> {\n    return this.http.post<HttpResponse<any>>(`${environment.apiEndpoint}/${path}`, entity);\n  }\n\n  get httpClient() {\n    return this.http;\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient, HttpResponse } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class ApiService {\r\n\r\n  languages = [\r\n    { code: 'EN', name: 'Engilish' },\r\n    { code: 'FR', name: 'French' },\r\n    { code: 'PT', name: 'Portuguese' },\r\n  ]\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  post(path: string, entity: any): Observable<any> {\r\n    return this.http.post<HttpResponse<any>>(`${environment.apiEndpoint}/${path}`, entity);\r\n  }\r\n\r\n  postEvents(path: string, entity: any): Observable<any> {\r\n    return this.http.post(`${environment.apiEndpoint}/${path}`, entity, {\r\n      reportProgress: true,\r\n      observe: 'events',\r\n      responseType: 'text'\r\n    });\r\n  }\r\n\r\n  get(path: string): Observable<any[]> {\r\n    return this.http.get<any[]>(`${environment.apiEndpoint}${path}`);\r\n  }\r\n\r\n  getById(path: string, id: string): Observable<any> {\r\n    return this.http.get<any>(`${environment.apiEndpoint}/${path}/${id}`);\r\n  }\r\n\r\n  createUpload(path: string, entity: any): Observable<HttpResponse<any>> {\r\n    return this.http.post<HttpResponse<any>>(`${environment.apiEndpoint}/${path}`, entity);\r\n  }\r\n\r\n  get httpClient() {\r\n    return this.http;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -583,12 +583,12 @@
         },
         {
             "name": "JsonService",
-            "id": "injectable-JsonService-52208909c6a341b46e9a7b0fa7cf72aeca0af1d5302b028ad948c007939c35fece6400bd39c82c820fef0253b5f34bec68237a09dc2ec32c594ad7842f286d3f",
+            "id": "injectable-JsonService-a7f9218b29a683bbb65df00365f1518e83f79804a5229a815920dbb252db2cd324c5866fdeb805b9b88c883d3611bc32cf3dc2006c6b8077b439b2a121e21606",
             "file": "src/app/core/api/json.service.ts",
             "properties": [
                 {
                     "name": "languages",
-                    "defaultValue": "[\n    { code: 'EN', name: 'Engilish' },\n    { code: 'FR', name: 'French' },\n    { code: 'PT', name: 'Portuguese' },\n  ]",
+                    "defaultValue": "[\r\n    { code: 'EN', name: 'Engilish' },\r\n    { code: 'FR', name: 'French' },\r\n    { code: 'PT', name: 'Portuguese' },\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -633,7 +633,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { HttpClient, HttpResponse } from '@angular/common/http';\nimport { Observable } from 'rxjs';\nimport { environment } from 'src/environments/environment';\n\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class JsonService {\n\n  languages = [\n    { code: 'EN', name: 'Engilish' },\n    { code: 'FR', name: 'French' },\n    { code: 'PT', name: 'Portuguese' },\n  ]\n\n  constructor(private http: HttpClient) {\n  }\n\n  get<T>(path: string): Observable<T> {\n    return this.http.get<T>(`${environment.baseUrl}${path}`);\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { HttpClient, HttpResponse } from '@angular/common/http';\r\nimport { Observable } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class JsonService {\r\n\r\n  languages = [\r\n    { code: 'EN', name: 'Engilish' },\r\n    { code: 'FR', name: 'French' },\r\n    { code: 'PT', name: 'Portuguese' },\r\n  ]\r\n\r\n  constructor(private http: HttpClient) {\r\n  }\r\n\r\n  get<T>(path: string): Observable<T> {\r\n    return this.http.get<T>(`${environment.baseUrl}${path}`);\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -664,7 +664,7 @@
         },
         {
             "name": "StoreService",
-            "id": "injectable-StoreService-83e98cbb20e1c0e57827023a8c5847964508f42edd3fb1d54536a18e2d19dc35c074a9bb555f104867dfa51a6951ba326057dd91558fbbbc2ca314d7d09b5234",
+            "id": "injectable-StoreService-de74c87f35fc225e97ecb46663ecd54074f0d1ec53b04693c9becd5bc3ef3af4f4f1bf2cc653b44a26335a09a1bb062f95ea25d91dd85a8a1dbfa2f062f923a1",
             "file": "src/app/core/store/store.service.ts",
             "properties": [
                 {
@@ -743,7 +743,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from '@angular/core';\nimport { ApiService } from '../api/api.service';\nimport { JsonService } from '../api/json.service';\nimport { BasicApiStore } from './basic-api-store';\nimport { JsonStore } from './json-store';\n\nimport { Store } from './store';\nimport { StoreConfig } from './store-config';\n\n\n@Injectable({\n  providedIn: 'root'\n})\nexport class StoreService {\n\n  stateObjects: { [k: string]: any } = {};\n\n  stateQuery: { [k: string]: string } = {};\n\n  stores: Map<string, Store<any>> = new Map();\n  \n  storeConfigs!:{ [k: string]: StoreConfig };\n\n  constructor(private jsonService: JsonService,private apiService:ApiService) {\n    jsonService.get<{ [k: string]: StoreConfig }>('/assets/application/config/stores.json').subscribe(data => {\n      this.storeConfigs=data;\n    });\n  }\n\n  getState<T extends Store<any>>(name: string): T {\n    if (!this.stores.has(name)) {\n      switch(this.storeConfigs[name].storeType) {\n        case 'JsonStore':\n          this.stores.set(name, new JsonStore(this.storeConfigs[name],this.jsonService));\n          break;\n        case 'ApiStore':\n          this.stores.set(name, new BasicApiStore(this.storeConfigs[name],this.apiService));\n      }\n      \n    }\n    return this.stores.get(name) as T;\n  }\n}\n",
+            "sourceCode": "import { Injectable } from '@angular/core';\r\nimport { ApiService } from '../api/api.service';\r\nimport { JsonService } from '../api/json.service';\r\nimport { BasicApiStore } from './basic-api-store';\r\nimport { JsonStore } from './json-store';\r\n\r\nimport { Store } from './store';\r\nimport { StoreConfig } from './store-config';\r\n\r\n\r\n@Injectable({\r\n  providedIn: 'root'\r\n})\r\nexport class StoreService {\r\n\r\n  stateObjects: { [k: string]: any } = {};\r\n\r\n  stateQuery: { [k: string]: string } = {};\r\n\r\n  stores: Map<string, Store<any>> = new Map();\r\n  \r\n  storeConfigs!:{ [k: string]: StoreConfig };\r\n\r\n  constructor(private jsonService: JsonService,private apiService:ApiService) {\r\n    jsonService.get<{ [k: string]: StoreConfig }>('/assets/application/config/stores.json').subscribe(data => {\r\n      this.storeConfigs=data;\r\n    });\r\n  }\r\n\r\n  getState<T extends Store<any>>(name: string): T {\r\n    if (!this.stores.has(name)) {\r\n      switch(this.storeConfigs[name].storeType) {\r\n        case 'JsonStore':\r\n          this.stores.set(name, new JsonStore(this.storeConfigs[name],this.jsonService));\r\n          break;\r\n        case 'ApiStore':\r\n          this.stores.set(name, new BasicApiStore(this.storeConfigs[name],this.apiService));\r\n      }\r\n      \r\n    }\r\n    return this.stores.get(name) as T;\r\n  }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -793,12 +793,12 @@
     "classes": [
         {
             "name": "BasicApiStore",
-            "id": "class-BasicApiStore-7a3ae8ec930d6ceb45ce92d3ed35b5fe0426d306b0baadbd4586fe2f7b3f37b7cbc883982d1a0548bc57710b0f348e4f1ab6894f75a85e59db2ac38aeabbd6ee",
+            "id": "class-BasicApiStore-13f16b7cebcfbf0b971ad3512dd5b71475d25497f59cf7509ca183dc57097d43dcd40b75e3cc59682f11bf5f4305d576270a3fe289464ccedaaadce677453907",
             "file": "src/app/core/store/basic-api-store.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { Observable } from \"rxjs\";\nimport { ApiService } from \"../api/api.service\";\nimport { Store } from \"./store\";\nimport { StoreConfig } from \"./store-config\";\n\nexport class BasicApiStore implements Store<any> {\n    \n    constructor(private storeConfig:StoreConfig,apiService:ApiService) {\n\n    }\n    filter(filter: any): Observable<any> {\n        throw new Error(\"Method not implemented.\");\n    }\n\n    values(): Observable<any> {\n        throw new Error(\"Method not implemented.\");\n    }\n}\n",
+            "sourceCode": "import { Observable } from \"rxjs\";\r\nimport { ApiService } from \"../api/api.service\";\r\nimport { Store } from \"./store\";\r\nimport { StoreConfig } from \"./store-config\";\r\n\r\nexport class BasicApiStore implements Store<any> {\r\n    \r\n    constructor(private storeConfig:StoreConfig,apiService:ApiService) {\r\n\r\n    }\r\n    filter(filter: any): Observable<any> {\r\n        throw new Error(\"Method not implemented.\");\r\n    }\r\n\r\n    values(): Observable<any> {\r\n        throw new Error(\"Method not implemented.\");\r\n    }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -892,12 +892,12 @@
         },
         {
             "name": "JsonStore",
-            "id": "class-JsonStore-7d3a25fbe6a31124f3b03d88fcecb54d46ed37aeacac86a85d8055940cc56eefd2881734a27ad0c3a13c75b13134d0523a7cbb44a5814b8be21325859bd9870a",
+            "id": "class-JsonStore-696ebfb4e5d4a24beb0fea029493bbf881ec05403b076cf7416522d4840cf0f14e03c30c5fd68d0dc6d293fe32f6d08122358a9f53a95ee2647ca7396c4226d2",
             "file": "src/app/core/store/json-store.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "import { BehaviorSubject, Observable, Subject } from 'rxjs';\nimport { environment } from 'src/environments/environment';\nimport { JsonService } from '../api/json.service';\nimport { Store } from './store';\nimport { StoreConfig } from './store-config';\n\nexport class JsonStore implements Store<any> {\n    protected _list$ = new BehaviorSubject<any[]>([]);\n    list$ = this._list$.asObservable();\n\n    constructor(\n        private storeConfig: StoreConfig,\n        private jsonService: JsonService\n    ) {\n        jsonService.get<any>(`${storeConfig.path}`).subscribe((data) => {\n            console.log(data);\n            this._list$.next(data);\n        });\n    }\n    values(): Observable<any[]> {\n        return this.list$;\n    }\n}\n",
+            "sourceCode": "import { BehaviorSubject, Observable, Subject } from 'rxjs';\r\nimport { environment } from 'src/environments/environment';\r\nimport { JsonService } from '../api/json.service';\r\nimport { Store } from './store';\r\nimport { StoreConfig } from './store-config';\r\n\r\nexport class JsonStore implements Store<any> {\r\n    protected _list$ = new BehaviorSubject<any[]>([]);\r\n    list$ = this._list$.asObservable();\r\n\r\n    constructor(\r\n        private storeConfig: StoreConfig,\r\n        private jsonService: JsonService\r\n    ) {\r\n        jsonService.get<any>(`${storeConfig.path}`).subscribe((data) => {\r\n            console.log(data);\r\n            this._list$.next(data);\r\n        });\r\n    }\r\n    values(): Observable<any[]> {\r\n        return this.list$;\r\n    }\r\n}\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -987,12 +987,12 @@
         },
         {
             "name": "SelectionModel",
-            "id": "class-SelectionModel-e995a274029a33e679a97e5b199972db54fbdddbdf15c6cab87ae89223becad6f961b4c218d0f7b3d32492c13c85f94277e0a10131ff9946b276e0b444129c59",
+            "id": "class-SelectionModel-827d9aa022a89e878d577287bac6e8916e594016f60ca893b5f10048304fb60778c1ce5f5e409abf71bb52fcdca03db945f8d5194e8ccf70c1ab0ee4aa95e369",
             "file": "src/app/core/domain/selection-model.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "class",
-            "sourceCode": "export class SelectionModel<T> {\n    private _selectedItems: Array<any> = [];\n\n    test = 'test';\n\n    constructor(private _isMultiple: boolean = false) {\n    }\n\n    toggle(value: T): void {\n        if (this._selectedItems.includes(value)) {\n            this._selectedItems.splice(this._selectedItems.indexOf(value), 1);\n        } else {\n            this._selectedItems.push(value);\n        }\n    }\n    get selected(): Array<T> {\n        return this._selectedItems;\n    }\n    \n    isSelected(value: T): boolean {\n        return this._selectedItems.includes(value);\n    }\n}\n\n",
+            "sourceCode": "export class SelectionModel<T> {\r\n    private _selectedItems: Array<any> = [];\r\n\r\n    test = 'test';\r\n\r\n    constructor(private _isMultiple: boolean = false) {\r\n    }\r\n\r\n    toggle(value: T): void {\r\n        if (this._selectedItems.includes(value)) {\r\n            this._selectedItems.splice(this._selectedItems.indexOf(value), 1);\r\n        } else {\r\n            this._selectedItems.push(value);\r\n        }\r\n    }\r\n    get selected(): Array<T> {\r\n        return this._selectedItems;\r\n    }\r\n    \r\n    isSelected(value: T): boolean {\r\n        return this._selectedItems.includes(value);\r\n    }\r\n}\r\n\r\n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -1125,12 +1125,12 @@
     "directives": [
         {
             "name": "ClickAwayDirective",
-            "id": "directive-ClickAwayDirective-6ebcd88260cfde73c5086f5401bae2e6694bea6b598e6d5b364b6b596b654b7d1ebcb3acc9f8d5fd9e1529a4969625f6ee4d31f19f14c0376df149595ced35e8",
+            "id": "directive-ClickAwayDirective-a6844f20dc74c34519f3b0dfe321737e8fb4cf6ff043241dc16a8e37b18fc3924a3fed9dcd70652ea912a6875b08fe4f6b3e4dd83b4930ec3335e2658f8e80a4",
             "file": "src/app/core/directives/click-away.directive.ts",
             "type": "directive",
             "description": "<p>Example Usage  &lt;a (clickAway)=&quot;showChildren=false&quot;/&gt;</p>\n",
             "rawdescription": "\n\nExample Usage  <a (clickAway)=\"showChildren=false\"/>\n",
-            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\n\n/**\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\n */\n@Directive({\n    selector: '[clickAway]'\n})\nexport class ClickAwayDirective {\n    constructor(private _elementRef : ElementRef) {\n        console.log('ClickAway Directive Constructor');\n    }\n \n    @Output()\n    public clickAway = new EventEmitter();\n \n    @HostListener('document:click', ['$event.target'])\n    public onClick(targetElement:HTMLElement) {\n        console.log('ClickAway Directive');\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\n        if (!clickedInside) {\n            this.clickAway.emit(targetElement);\n        }\n    }\n}",
+            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\r\n\r\n/**\r\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\r\n */\r\n@Directive({\r\n    selector: '[clickAway]'\r\n})\r\nexport class ClickAwayDirective {\r\n    constructor(private _elementRef : ElementRef) {\r\n        console.log('ClickAway Directive Constructor');\r\n    }\r\n \r\n    @Output()\r\n    public clickAway = new EventEmitter();\r\n \r\n    @HostListener('document:click', ['$event.target'])\r\n    public onClick(targetElement:HTMLElement) {\r\n        console.log('ClickAway Directive');\r\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\r\n        if (!clickedInside) {\r\n            this.clickAway.emit(targetElement);\r\n        }\r\n    }\r\n}",
             "selector": "[clickAway]",
             "providers": [],
             "inputsClass": [],
@@ -1235,12 +1235,12 @@
         },
         {
             "name": "ComponentHostDirective",
-            "id": "directive-ComponentHostDirective-35d60bd1497e6bf8b007d5d6a4fc5c3b51b37426401c8a49bb681157bf45d181ba35b9839c441910db52e9fb41d40492445bf084ed8a845275a13329ea741053",
+            "id": "directive-ComponentHostDirective-35fadab39a256b1af58798cb7f01c48188ba802d2971d58d783a0964b832eb2b3b3c1b2408b53722223979176c82817cf0c31c6cfacff2d5179e81be255d4e86",
             "file": "src/app/core/component-host.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Directive, ViewContainerRef } from '@angular/core';\n\n@Directive({\n  selector: '[appComponentHost]'\n})\nexport class ComponentHostDirective {\n  constructor(public viewContainerRef: ViewContainerRef) { }\n}\n",
+            "sourceCode": "import { Directive, ViewContainerRef } from '@angular/core';\r\n\r\n@Directive({\r\n  selector: '[appComponentHost]'\r\n})\r\nexport class ComponentHostDirective {\r\n  constructor(public viewContainerRef: ViewContainerRef) { }\r\n}\r\n",
             "selector": "[appComponentHost]",
             "providers": [],
             "inputsClass": [],
@@ -1293,12 +1293,12 @@
         },
         {
             "name": "FormValueDirective",
-            "id": "directive-FormValueDirective-4a56db390f244ea0528d5e53fd49c1c74856774ffd3ddc95846cbbdefe73a54603c74575248a104b42b724d2b82f56db270b0d67b835418cf4bbb3ae17b453e7",
+            "id": "directive-FormValueDirective-8484c9e3e2f1077feace3465b2bb500476bd700c48ec612a8f06fd6023a3634e1cbfed3253dac73bfed82160c45f9c0e4a5f4b1f379950fa43ef25e9636d4fba",
             "file": "src/app/core/directives/form-value.directive.ts",
             "type": "directive",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import {\n  Directive,\n  ElementRef,\n  Renderer2,\n  HostListener,\n  forwardRef,\n  HostBinding\n} from '@angular/core';\n\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\n\n@Directive({\n  selector: '[formValue]',\n  providers:\n  [\n    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => FormValueDirective), multi: true }\n  ]\n})\nexport class FormValueDirective implements ControlValueAccessor {\n  @HostBinding('attr.contenteditable') enabled = false;\n\n  private onChange!: (value: string) => void;\n  private onTouched!: () => void;\n\n  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }\n\n  @HostListener('input') onInput(): void {\n    this.onChange(this.elementRef.nativeElement.innerHTML);\n  }\n\n  @HostListener('blur') onBlur(): void {\n    this.onTouched();\n  }\n\n  writeValue(value: string): void {\n    console.log(value)\n    this.elementRef.nativeElement.innerText =  value ;\n  }\n\n  registerOnChange(onChange: (value: string) => void): void {\n    this.onChange = onChange;\n  }\n\n  registerOnTouched(onTouched: () => void): void {\n    this.onTouched = onTouched;\n  }\n\n  setDisabledState(disabled: boolean): void {\n    this.enabled = !disabled;\n  }\n}",
+            "sourceCode": "import {\r\n  Directive,\r\n  ElementRef,\r\n  Renderer2,\r\n  HostListener,\r\n  forwardRef,\r\n  HostBinding\r\n} from '@angular/core';\r\n\r\nimport { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';\r\n\r\n@Directive({\r\n  selector: '[formValue]',\r\n  providers:\r\n  [\r\n    { provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => FormValueDirective), multi: true }\r\n  ]\r\n})\r\nexport class FormValueDirective implements ControlValueAccessor {\r\n  @HostBinding('attr.contenteditable') enabled = false;\r\n\r\n  private onChange!: (value: string) => void;\r\n  private onTouched!: () => void;\r\n\r\n  constructor(private elementRef: ElementRef, private renderer: Renderer2) { }\r\n\r\n  @HostListener('input') onInput(): void {\r\n    this.onChange(this.elementRef.nativeElement.innerHTML);\r\n  }\r\n\r\n  @HostListener('blur') onBlur(): void {\r\n    this.onTouched();\r\n  }\r\n\r\n  writeValue(value: string): void {\r\n    console.log(value)\r\n    this.elementRef.nativeElement.innerText =  value ;\r\n  }\r\n\r\n  registerOnChange(onChange: (value: string) => void): void {\r\n    this.onChange = onChange;\r\n  }\r\n\r\n  registerOnTouched(onTouched: () => void): void {\r\n    this.onTouched = onTouched;\r\n  }\r\n\r\n  setDisabledState(disabled: boolean): void {\r\n    this.enabled = !disabled;\r\n  }\r\n}",
             "selector": "[formValue]",
             "providers": [
                 {
@@ -1594,7 +1594,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-48d05a461f682a6b2f89773a85f8aaaee505133266b2b4c84b8efe4a40957a4b3d3d72d3e65448730e38acbaed3a714dfd39d40ebad864f509e000ac763d94d9",
+            "id": "component-AppComponent-ec0f56ca44f5a1fd603054202c6450c953bcbfb1078a748a8adf68f2089107171fcad853c7bef1f1e834f9f12b92b0969901f3da16741b18085859afe6eb0b81",
             "file": "src/app/app.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1650,7 +1650,7 @@
                 },
                 {
                     "name": "options",
-                    "defaultValue": "[\n    {value:'1',label:'one'},\n    {value:'2',label:'two'},\n    {value:'3',label:'three'},\n    {value:'4',label:'four'},\n    {value:'5',label:'five'},\n    {value:'6',label:'six'},\n  ]",
+                    "defaultValue": "[\r\n    {value:'1',label:'One'},\r\n    {value:'2',label:'Two'},\r\n    {value:'3',label:'Three'},\r\n    {value:'4',label:'Four'},\r\n    {value:'5',label:'Five'},\r\n    {value:'6',label:'Six'},\r\n  ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -1764,7 +1764,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, ViewChild } from '@angular/core';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { Page } from \"src/app/core/domain/page\";\nimport { firstValueFrom } from 'rxjs';\nimport { JsonService } from './core/api/json.service';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport {SelectionModel} from '@angular/cdk/collections'\n\n\n@Component({\n  selector: 'app-root',\n  templateUrl: './app.component.html',\n  styleUrls: ['./app.component.css']\n})\nexport class AppComponent implements OnInit {\n  title = 'ng-dynamic-page';\n\n  @ViewChild(ComponentHostDirective, { static: true }) componentHost!: ComponentHostDirective;\n\n  @ViewChild(PopupComponent, { static: true }) popup!: PopupComponent;\n\n  model = new SelectionModel(true);\n\n  data = {id: 1, name: 'sajith'};\n\n  selection = [];\n\n  options = [\n    {value:'1',label:'one'},\n    {value:'2',label:'two'},\n    {value:'3',label:'three'},\n    {value:'4',label:'four'},\n    {value:'5',label:'five'},\n    {value:'6',label:'six'},\n  ]\n\n  constructor(private jsonService: JsonService) {\n\n  }\n\n  ngOnInit(): void {\n    // this.init();\n\n    // this.popup.show(RedComponent);\n\n    const model = new SelectionModel(false);\n\n    model.changed.subscribe(() => {\n      console.log(model.selected);\n    });\n    \n    \n    model.toggle(\"1\");\n    model.toggle(\"8\");\n    model.toggle(\"1\");\n    // console.log(model.selected);\n\n    \n\n  }\n\n\n  async init() {\n    const viewContainerRef = this.componentHost.viewContainerRef;\n    viewContainerRef.clear();\n\n    const componentRef = viewContainerRef.createComponent<DynamicFormComponent>(DynamicFormComponent);\n    const page = await firstValueFrom(this.jsonService.get<Page>('/assets/application/pages/sample-page.json'));\n\n    componentRef.instance.init(page);\n  }\n\n  showPopup() {\n    this.popup.show(RedComponent)\n  }\n\n  test($event: any) {\n   this.model.toggle(this.data);\n  }\n\n}",
+            "sourceCode": "import { Component, OnInit, ViewChild } from '@angular/core';\r\nimport { ComponentHostDirective } from './core/component-host.directive';\r\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\r\nimport { Page } from \"src/app/core/domain/page\";\r\nimport { firstValueFrom } from 'rxjs';\r\nimport { JsonService } from './core/api/json.service';\r\nimport { PopupComponent } from './popup/popup.component';\r\nimport { RedComponent } from './sample/red/red.component';\r\nimport {SelectionModel} from '@angular/cdk/collections'\r\n\r\n\r\n@Component({\r\n  selector: 'app-root',\r\n  templateUrl: './app.component.html',\r\n  styleUrls: ['./app.component.css']\r\n})\r\nexport class AppComponent implements OnInit {\r\n  title = 'ng-dynamic-page';\r\n\r\n  @ViewChild(ComponentHostDirective, { static: true }) componentHost!: ComponentHostDirective;\r\n\r\n  @ViewChild(PopupComponent, { static: true }) popup!: PopupComponent;\r\n\r\n  model = new SelectionModel(true);\r\n\r\n  data = {id: 1, name: 'sajith'};\r\n\r\n  selection = [];\r\n\r\n  options = [\r\n    {value:'1',label:'One'},\r\n    {value:'2',label:'Two'},\r\n    {value:'3',label:'Three'},\r\n    {value:'4',label:'Four'},\r\n    {value:'5',label:'Five'},\r\n    {value:'6',label:'Six'},\r\n  ]\r\n\r\n  constructor(private jsonService: JsonService) {\r\n\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    // this.init();\r\n\r\n    // this.popup.show(RedComponent);\r\n\r\n    const model = new SelectionModel(false);\r\n\r\n    model.changed.subscribe(() => {\r\n      console.log(model.selected);\r\n    });\r\n    \r\n    \r\n    model.toggle(\"1\");\r\n    model.toggle(\"8\");\r\n    model.toggle(\"1\");\r\n    // console.log(model.selected);\r\n\r\n    \r\n\r\n  }\r\n\r\n\r\n  async init() {\r\n    const viewContainerRef = this.componentHost.viewContainerRef;\r\n    viewContainerRef.clear();\r\n\r\n    const componentRef = viewContainerRef.createComponent<DynamicFormComponent>(DynamicFormComponent);\r\n    const page = await firstValueFrom(this.jsonService.get<Page>('/assets/application/pages/sample-page.json'));\r\n\r\n    componentRef.instance.init(page);\r\n  }\r\n\r\n  showPopup() {\r\n    this.popup.show(RedComponent)\r\n  }\r\n\r\n  test($event: any) {\r\n   this.model.toggle(this.data);\r\n  }\r\n\r\n}",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1802,11 +1802,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<p>\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n</p>\n\n<button (click)=\"showPopup()\">Show popup</button>\n\n<app-popup></app-popup>\n\n\n<ng-template appComponentHost></ng-template>\n\n<input type=\"checkbox\" (change)=\"test($event)\"> Test\n\n{{this.model.selected | json}}\n\n\n    <app-multi-select [(ngModel)]=\"selection\" [options]=\"options\"> </app-multi-select>\n\n                   <p class=\"mt-3\" >Form value: {{selection | json }}</p>"
+            "templateData": "<p>\r\n    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\r\n</p>\r\n\r\n<button (click)=\"showPopup()\">Show popup</button>\r\n\r\n<app-popup></app-popup>\r\n\r\n\r\n<ng-template appComponentHost></ng-template>\r\n\r\n<input type=\"checkbox\" (change)=\"test($event)\"> Test\r\n\r\n{{this.model.selected | json}}\r\n\r\n\r\n    <app-multi-select [(ngModel)]=\"selection\" [options]=\"options\"> </app-multi-select>\r\n\r\n                   <p class=\"mt-3\" >Form value: {{selection | json }}</p>"
         },
         {
             "name": "BaseComponent",
-            "id": "component-BaseComponent-52e472e7828f4e4fade5563d0fe5d5605f715aaf16ea927e70c6bb1d948ced6e08abf65178f6a3c73adcba25d4045b630f4aa5cf4fedfe369dd8a1231233a5ef",
+            "id": "component-BaseComponent-739146616381ceb173c998ab9fe4e74e7f3bf38ffc1919da71c878e8fed205aeb11c7320d7cddd003d604c2c74d2ac8705883fdbfff3cd1f67e5bc7e330ca21e",
             "file": "src/app/core/controls/base-conrol/base.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1852,7 +1852,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component,  OnDestroy } from '@angular/core';\nimport { Subject } from 'rxjs';\n\n@Component({\n  selector: 'app-base'\n  , template: ''})\nexport class BaseComponent implements OnDestroy {\n\n  destroy$ = new Subject<boolean>();\n\n\n  ngOnDestroy() {\n    // this.destroy$.next(true);\n    this.destroy$.complete();\n  }\n\n\n}\n",
+            "sourceCode": "import { Component,  OnDestroy } from '@angular/core';\r\nimport { Subject } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'app-base'\r\n  , template: ''})\r\nexport class BaseComponent implements OnDestroy {\r\n\r\n  destroy$ = new Subject<boolean>();\r\n\r\n\r\n  ngOnDestroy() {\r\n    // this.destroy$.next(true);\r\n    this.destroy$.complete();\r\n  }\r\n\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1862,7 +1862,7 @@
         },
         {
             "name": "BaseConrolComponent",
-            "id": "component-BaseConrolComponent-5a931e57abede7e032bb928923d6b9bdc62909e6eab9bcfb083656fca333139c2dfaaf81589163819ffa6e20b088b3c128509628085d252a0856a0f28daa484e",
+            "id": "component-BaseConrolComponent-93a57736ba026edb590326c63d3bbe9f81d4966b93c9d3b210db71484479ea46756042e9cbbf1fcdd91025bd4790624ba48c1e5d8e103f3aa6cffa46f37a785f",
             "file": "src/app/core/controls/base-conrol/base-conrol.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2021,7 +2021,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { ControlValueAccessor } from '@angular/forms';\nimport { BaseComponent } from './base.component';\n\n\n@Component({\n  selector: 'app-base-conrol',\n  template: ''\n})\nexport abstract class BaseConrolComponent extends BaseComponent implements ControlValueAccessor  {\n\n  onChange = (_: any) => { }\n  onTouch = () => { }\n  \n  constructor() { \n    super();\n  }\n  abstract writeValue(obj: any | any[]): void;\n\n  registerOnChange(fn: any): void {\n    this.onChange = fn;\n  }\n\n  registerOnTouched(fn: any): void {\n    this.onTouch = fn;\n  }\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\r\nimport { ControlValueAccessor } from '@angular/forms';\r\nimport { BaseComponent } from './base.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-base-conrol',\r\n  template: ''\r\n})\r\nexport abstract class BaseConrolComponent extends BaseComponent implements ControlValueAccessor  {\r\n\r\n  onChange = (_: any) => { }\r\n  onTouch = () => { }\r\n  \r\n  constructor() { \r\n    super();\r\n  }\r\n  abstract writeValue(obj: any | any[]): void;\r\n\r\n  registerOnChange(fn: any): void {\r\n    this.onChange = fn;\r\n  }\r\n\r\n  registerOnTouched(fn: any): void {\r\n    this.onTouch = fn;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2040,7 +2040,7 @@
         },
         {
             "name": "DynamicFormComponent",
-            "id": "component-DynamicFormComponent-e6ddd35a633dcbefccb567dde96428dfeeac50536e30749d305b3bc9588ea1977a7d7867aefeeb3cf9f39bb90ec4b5b33786b3748556ccd7aca9552fc813176b",
+            "id": "component-DynamicFormComponent-327d9493c47ca8815052ea15da085332dc771f8854d09b98f052aefdccfffe846f8f3b46dae17c60a1212344f3c65bcb1226f4959ae4c6924e7ed35c7b627bb2",
             "file": "src/app/core/dynamic-form/dynamic-form.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2190,7 +2190,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\nimport { Page } from 'src/app/core/domain/page';\nimport { Field } from 'src/app/core/domain/field';\nimport { FormControl, FormGroup } from '@angular/forms';\nimport { StoreService } from '../store/store.service';\nimport { Store } from '../store/store';\nimport { Observable } from 'rxjs';\n\n@Component({\n  selector: 'app-dynamic-form',\n  templateUrl: './dynamic-form.component.html',\n  styleUrls: ['./dynamic-form.component.css'],\n})\nexport class DynamicFormComponent implements OnInit {\n  ready = false;\n  formGroup!: FormGroup;\n  page!: Page;\n  stores: { [k: string]: Store<any> } = {};\n  parentValues: { [k: string]: Observable<string> } = {};\n\n  constructor(private storeService: StoreService) {}\n\n  ngOnInit(): void {\n    console.log('DynamicFormComponent.ngOnInit()');\n  }\n\n  async init(page: Page) {\n    this.page = page;\n    await this.buildForm(page.fields);\n    this.ready = true;\n  }\n\n  private async buildForm(fields: Field[]) {\n    const parentFields = new Set(\n      fields\n        .filter((field) => field.parentField !== undefined)\n        .map((field) => field.parentField)\n    );\n\n    this.formGroup = new FormGroup({});\n    for (let field of fields) {\n      if (field.store) {\n        this.stores[field.store]= this.storeService.getState(field.store);\n      }\n\n      const formControl = new FormControl(field.value);\n      this.formGroup.addControl(field.name, formControl);\n\n      //any other field depends on this field\n      if (parentFields.has(field.name)) {\n        this.parentValues[field.name]=formControl.valueChanges;\n      }\n    }\n\n    console.log(this.formGroup,this.stores);\n  }\n}\n",
+            "sourceCode": "import { Component, OnInit } from '@angular/core';\r\nimport { Page } from 'src/app/core/domain/page';\r\nimport { Field } from 'src/app/core/domain/field';\r\nimport { FormControl, FormGroup } from '@angular/forms';\r\nimport { StoreService } from '../store/store.service';\r\nimport { Store } from '../store/store';\r\nimport { Observable } from 'rxjs';\r\n\r\n@Component({\r\n  selector: 'app-dynamic-form',\r\n  templateUrl: './dynamic-form.component.html',\r\n  styleUrls: ['./dynamic-form.component.css'],\r\n})\r\nexport class DynamicFormComponent implements OnInit {\r\n  ready = false;\r\n  formGroup!: FormGroup;\r\n  page!: Page;\r\n  stores: { [k: string]: Store<any> } = {};\r\n  parentValues: { [k: string]: Observable<string> } = {};\r\n\r\n  constructor(private storeService: StoreService) {}\r\n\r\n  ngOnInit(): void {\r\n    console.log('DynamicFormComponent.ngOnInit()');\r\n  }\r\n\r\n  async init(page: Page) {\r\n    this.page = page;\r\n    await this.buildForm(page.fields);\r\n    this.ready = true;\r\n  }\r\n\r\n  private async buildForm(fields: Field[]) {\r\n    const parentFields = new Set(\r\n      fields\r\n        .filter((field) => field.parentField !== undefined)\r\n        .map((field) => field.parentField)\r\n    );\r\n\r\n    this.formGroup = new FormGroup({});\r\n    for (let field of fields) {\r\n      if (field.store) {\r\n        this.stores[field.store]= this.storeService.getState(field.store);\r\n      }\r\n\r\n      const formControl = new FormControl(field.value);\r\n      this.formGroup.addControl(field.name, formControl);\r\n\r\n      //any other field depends on this field\r\n      if (parentFields.has(field.name)) {\r\n        this.parentValues[field.name]=formControl.valueChanges;\r\n      }\r\n    }\r\n\r\n    console.log(this.formGroup,this.stores);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2228,11 +2228,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<ng-container *ngIf=\"ready; else loading\">\n  <form [formGroup]=\"formGroup\">\n    <ng-container *ngFor=\"let field of page.fields; index as i\">\n      <div [ngSwitch]=\"field.type\">\n        <label>{{ field.label }}<br>\n          <input\n            *ngSwitchCase=\"'text'\"\n            formControlName=\"{{ field.name }}\"\n            type=\"text\"/>\n\n          <select\n            *ngSwitchCase=\"'select'\"\n            formControlName=\"{{ field.name }}\">\n            <option selected disabled value=null>Select</option>\n            <option *ngFor=\"let value of stores[field.store].values() | async |  parentFilter: (parentValues[field.parentField] | async)\" value=\"{{value[field.valueField]}}\" >{{value[field.labelField]}}</option>\n        </select>\n\n        </label>\n      </div>\n    </ng-container>\n  </form>\n  {{ formGroup.value | json }}\n</ng-container>\n\n<ng-template #loading>Loading...</ng-template>\n\n<!-- {{parentValues | a | json}} -->"
+            "templateData": "<ng-container *ngIf=\"ready; else loading\">\r\n  <form [formGroup]=\"formGroup\">\r\n    <ng-container *ngFor=\"let field of page.fields; index as i\">\r\n      <div [ngSwitch]=\"field.type\">\r\n        <label>{{ field.label }}<br>\r\n          <input\r\n            *ngSwitchCase=\"'text'\"\r\n            formControlName=\"{{ field.name }}\"\r\n            type=\"text\"/>\r\n\r\n          <select\r\n            *ngSwitchCase=\"'select'\"\r\n            formControlName=\"{{ field.name }}\">\r\n            <option selected disabled value=null>Select</option>\r\n            <option *ngFor=\"let value of stores[field.store].values() | async |  parentFilter: (parentValues[field.parentField] | async)\" value=\"{{value[field.valueField]}}\" >{{value[field.labelField]}}</option>\r\n        </select>\r\n\r\n        </label>\r\n      </div>\r\n    </ng-container>\r\n  </form>\r\n  {{ formGroup.value | json }}\r\n</ng-container>\r\n\r\n<ng-template #loading>Loading...</ng-template>\r\n\r\n<!-- {{parentValues | a | json}} -->"
         },
         {
             "name": "MultiSelectComponent",
-            "id": "component-MultiSelectComponent-3f960235eb9af84b98e42a83f0e553736575dc601d65370b6093f6cca472b6cf6759d1a12a39b630175a9f21dd56c4984245ed1158c44e524bed6f76b8fb69e7",
+            "id": "component-MultiSelectComponent-6fa8c15a73ec913536ebe70c2de583df6d654f30a6071ce6a47400fc1cf810cf88c2ae733d7984665456b7c1092c1424c0776caaf8c38d77b5404df1d62cdd1c",
             "file": "src/app/core/multi-select/multi-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2240,7 +2240,7 @@
             "outputs": [],
             "providers": [
                 {
-                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => MultiSelectComponent), multi: true\n}",
+                    "name": "{\n    provide: NG_VALUE_ACCESSOR, useExisting: forwardRef(() => MultiSelectComponent), multi: true,\n}",
                     "type": "component"
                 }
             ],
@@ -2259,7 +2259,7 @@
                     "defaultValue": "'label'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 23,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -2267,7 +2267,7 @@
                     "name": "options",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 43,
+                    "line": 44,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -2276,7 +2276,7 @@
                     "defaultValue": "'value'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 24,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 }
@@ -2290,7 +2290,22 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 22
+                    "line": 21
+                },
+                {
+                    "name": "dropdown",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 29,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'dropdown', {static: true}"
+                        }
+                    ]
                 },
                 {
                     "name": "isOpen",
@@ -2300,7 +2315,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 20
                 },
                 {
                     "name": "selectedLabel",
@@ -2309,7 +2324,7 @@
                     "type": "string | ",
                     "optional": false,
                     "description": "",
-                    "line": 27
+                    "line": 26
                 },
                 {
                     "name": "selectedOptions",
@@ -2319,7 +2334,22 @@
                     "type": "SelectionModel<any>",
                     "optional": false,
                     "description": "",
-                    "line": 26
+                    "line": 25
+                },
+                {
+                    "name": "target",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ElementRef",
+                    "optional": false,
+                    "description": "",
+                    "line": 28,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'target', {static: true}"
+                        }
+                    ]
                 },
                 {
                     "name": "onChange",
@@ -2363,6 +2393,26 @@
             ],
             "methodsClass": [
                 {
+                    "name": "hideDropDown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 80,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "showDropDown",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 59,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
                     "name": "toggle",
                     "args": [
                         {
@@ -2375,7 +2425,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 49,
+                    "line": 50,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2403,7 +2453,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 34,
+                    "line": 36,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2504,7 +2554,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\nimport { Component, forwardRef, Input } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\nimport {computePosition, flip} from '@floating-ui/dom';\n\n@Component({\n  selector: 'app-multi-select',\n  templateUrl: './multi-select.component.html',\n  styleUrls: ['./multi-select.component.css'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => MultiSelectComponent),\n      multi: true\n    }\n  ]  \n})\nexport class MultiSelectComponent extends BaseConrolComponent {\n\n  isOpen = false;\n  _options!: any[];\n  @Input() label: string = 'label';\n  @Input() value: string = 'value';\n\n  selectedOptions:SelectionModel<any> = new SelectionModel(true);\n  selectedLabel!: string | unknown;\n\n  constructor(){\n    super();\n    console.log(this.selectedOptions);\n  }\n\n  writeValue(value: any[]): void {\n    if(value && value.length>0){\n      this.selectedOptions.select(value);\n      console.log('writeValue', value);\n    }\n  }\n  \n\n  @Input()\n  public set options(options: any[]) {\n    console.log('options', options);\n    this._options = options;\n    this.selectedOptions= new SelectionModel(true);\n  }\n\n  toggle(option: any) {\n    console.log(this.selectedOptions.selected);\n    this.selectedOptions.toggle(option);\n    this.onChange(this.selectedOptions.selected.map((o:any) => o[this.value]));\n    this.selectedLabel = this.selectedOptions.selected.map((o:any) => o[this.label]).join(', ');\n    \n  }\n}\n",
+            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\r\nimport { Component, ElementRef, forwardRef, Input, ViewChild } from '@angular/core';\r\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\r\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\r\nimport { computePosition, flip } from '@floating-ui/dom';\r\n\r\n@Component({\r\n  selector: 'app-multi-select',\r\n  templateUrl: './multi-select.component.html',\r\n  styleUrls: ['./multi-select.component.css'],\r\n  providers: [\r\n    {\r\n      provide: NG_VALUE_ACCESSOR,\r\n      useExisting: forwardRef(() => MultiSelectComponent),\r\n      multi: true,\r\n    },\r\n  ],\r\n})\r\nexport class MultiSelectComponent extends BaseConrolComponent {\r\n  isOpen = false;\r\n  _options!: any[];\r\n  @Input() label: string = 'label';\r\n  @Input() value: string = 'value';\r\n\r\n  selectedOptions: SelectionModel<any> = new SelectionModel(true);\r\n  selectedLabel!: string | unknown;\r\n\r\n  @ViewChild('target', { static: true }) target!: ElementRef;\r\n  @ViewChild('dropdown', { static: true }) dropdown!: ElementRef;\r\n\r\n  constructor() {\r\n    super();\r\n    console.log(this.selectedOptions);\r\n  }\r\n\r\n  writeValue(value: any[]): void {\r\n    if (value && value.length > 0) {\r\n      this.selectedOptions.select(value);\r\n      console.log('writeValue', value);\r\n    }\r\n  }\r\n\r\n  @Input()\r\n  public set options(options: any[]) {\r\n    console.log('options', options);\r\n    this._options = options;\r\n    this.selectedOptions = new SelectionModel(true);\r\n  }\r\n\r\n  toggle(option: any) {\r\n    console.log(this.selectedOptions.selected);\r\n    this.selectedOptions.toggle(option);\r\n    this.onChange(this.selectedOptions.selected.map((o: any) => o[this.value]));\r\n    this.selectedLabel = this.selectedOptions.selected\r\n      .map((o: any) => o[this.label])\r\n      .join(', ');\r\n  }\r\n\r\n  showDropDown() {\r\n    this.isOpen = !this.isOpen;\r\n\r\n    if(!this.isOpen) {\r\n      this.hideDropDown();\r\n      return;\r\n    }\r\n    \r\n    console.log(this.target, this.dropdown);\r\n    this.dropdown.nativeElement.style.display='flex';\r\n    computePosition(this.target.nativeElement, this.dropdown.nativeElement, {\r\n      placement: 'top',\r\n      middleware: [flip()],\r\n    }).then(({ x, y }) => {\r\n      Object.assign(this.dropdown.nativeElement.style, {\r\n        left: `${x}px`,\r\n        top: `${y}px`,\r\n      });\r\n    });\r\n  }\r\n\r\n  hideDropDown() {\r\n    this.dropdown.nativeElement.style.display='none';\r\n    this.isOpen=false;\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2519,7 +2569,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "args": [],
-                "line": 27
+                "line": 29
             },
             "extends": "BaseConrolComponent",
             "accessors": {
@@ -2539,7 +2589,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 43,
+                        "line": 44,
                         "jsdoctags": [
                             {
                                 "name": "options",
@@ -2554,11 +2604,11 @@
                     }
                 }
             },
-            "templateData": "<div (clickAway)=\"isOpen=false\">\n<span (click)=\"isOpen = !isOpen\" type=\"button\" \n  class=\"\n    appearance-none\n    rounded\n    border border-gray-500\n    px-2\n    py-2\n    text-sm text-gray-600\n    hover:border-blue-300\n    focus:border-blue-400\n    focus:outline-none\n    flex\n  \"\n>\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\n\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    class=\"h-5 w-5\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n  >\n    <path\n      fill-rule=\"evenodd\"\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\n      clip-rule=\"evenodd\"\n    />\n  </svg>\n</span>\n\n\n  <span class=\"flex flex-col\">\n    <label *ngFor=\"let option of _options\">\n      <input type=\"checkbox\"  [checked]=\"selectedOptions.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\n    </label>\n  </span>\n\n</div>"
+            "templateData": "{{isOpen}}\r\n\r\n<div (clickAway)=\"hideDropDown()\">\r\n<span (click)=\"showDropDown()\" type=\"button\" #target\r\n  class=\"\r\n    appearance-none\r\n    rounded\r\n    border border-gray-500\r\n    px-2\r\n    py-2\r\n    text-sm text-gray-600\r\n    hover:border-blue-300\r\n    focus:border-blue-400\r\n    focus:outline-none\r\n    flex\r\n  \"\r\n>\r\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\r\n\r\n  <svg\r\n    xmlns=\"http://www.w3.org/2000/svg\"\r\n    class=\"h-5 w-5\"\r\n    viewBox=\"0 0 20 20\"\r\n    fill=\"currentColor\"\r\n  >\r\n    <path\r\n      fill-rule=\"evenodd\"\r\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\r\n      clip-rule=\"evenodd\"\r\n    />\r\n  </svg>\r\n</span>\r\n\r\n\r\n  <span class=\"flex-col hidden shadow rounded \" #dropdown>\r\n    <label *ngFor=\"let option of _options\" class=\"text-base hover:bg-gray-100 px-2 py-1\">\r\n      <input class=\"w-3 h-3\" type=\"checkbox\"  [checked]=\"selectedOptions.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\r\n    </label>\r\n  </span>\r\n\r\n</div>\r\n\r\n"
         },
         {
             "name": "PopupComponent",
-            "id": "component-PopupComponent-9f8c2f97e47ff429e1db886499301f91e6b4c5af6a5949de3bda9476ab101d37433ac80cd96108717679cdba3ad818d26bd13c7d7b7b08927e9afee8ca22e202",
+            "id": "component-PopupComponent-ef3f47027d1c161aad20cb0f7fdf6c1f4cf7c4fc2482a1f07ff02b0fc050f68ebae2bdea8843acdd2f30eefa730177dbf4dc61f65eb8c29273b2d09c120ef8c4",
             "file": "src/app/popup/popup.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2650,7 +2700,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, OnInit, Type, ViewChild } from '@angular/core';\nimport { ComponentHostDirective } from '../core/component-host.directive';\nimport { BaseComponent } from '../core/controls/base-conrol/base.component';\n\n@Component({\n  selector: 'app-popup',\n  templateUrl: './popup.component.html',\n  styleUrls: ['./popup.component.css']\n})\nexport class PopupComponent implements OnInit {\n\n  @ViewChild(ComponentHostDirective, { static: false }) componentHost!: ComponentHostDirective;\n\n  visible = false;\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n  show(baseComponent:Type<BaseComponent>): void {\n\n    this.visible = true;\n    setTimeout(() => {\n      const viewContainerRef = this.componentHost.viewContainerRef;\n      viewContainerRef.clear();\n      const componentRef = viewContainerRef.createComponent< BaseComponent>(baseComponent);\n        \n    }, 300);\n   \n  }\n\n}\n",
+            "sourceCode": "import { Component, OnInit, Type, ViewChild } from '@angular/core';\r\nimport { ComponentHostDirective } from '../core/component-host.directive';\r\nimport { BaseComponent } from '../core/controls/base-conrol/base.component';\r\n\r\n@Component({\r\n  selector: 'app-popup',\r\n  templateUrl: './popup.component.html',\r\n  styleUrls: ['./popup.component.css']\r\n})\r\nexport class PopupComponent implements OnInit {\r\n\r\n  @ViewChild(ComponentHostDirective, { static: false }) componentHost!: ComponentHostDirective;\r\n\r\n  visible = false;\r\n\r\n  constructor() { }\r\n\r\n  ngOnInit(): void {\r\n  }\r\n\r\n  show(baseComponent:Type<BaseComponent>): void {\r\n\r\n    this.visible = true;\r\n    setTimeout(() => {\r\n      const viewContainerRef = this.componentHost.viewContainerRef;\r\n      viewContainerRef.clear();\r\n      const componentRef = viewContainerRef.createComponent< BaseComponent>(baseComponent);\r\n        \r\n    }, 300);\r\n   \r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2670,11 +2720,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div *ngIf=\"visible\" class=\"inset-0 bg-slate-500/20 absolute  grid place-content-center\" >\n\n    <ng-template appComponentHost>\n    \n    </ng-template> \n    \n\n</div>\n\n\n"
+            "templateData": "<div *ngIf=\"visible\" class=\"inset-0 bg-slate-500/20 absolute  grid place-content-center\" >\r\n\r\n    <ng-template appComponentHost>\r\n    \r\n    </ng-template> \r\n    \r\n\r\n</div>\r\n\r\n\r\n"
         },
         {
             "name": "RedComponent",
-            "id": "component-RedComponent-18afedf43347d3e2cdbddaae824453ccaf2451bd7ef74eb5ab3013cdc65e3a44b32e1e56667d8a302322071c22e6e3ab481a93cfe061b21a58cefb636f42003a",
+            "id": "component-RedComponent-a7363a03badde777a55b708aeab266e82fbb9cb13a3d98163d36886dce2d16ee180edeabf5f0fd137dbc982a937069350063a19db0f2a48d1894813c6b715667",
             "file": "src/app/sample/red/red.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2739,7 +2789,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { HttpClient } from '@angular/common/http';\nimport { Component, OnInit } from '@angular/core';\nimport { BaseComponent } from 'src/app/core/controls/base-conrol/base.component';\n\n\n@Component({\n  selector: 'app-red',\n  templateUrl: './red.component.html',\n  styleUrls: ['./red.component.css']\n})\nexport class RedComponent extends BaseComponent implements OnInit {\n  constructor(private http: HttpClient) {\n    super();\n  }\n\n  ngOnInit(): void {\n    console.log('RedComponent.ngOnInit',this.http);\n  }\n\n}\n",
+            "sourceCode": "import { HttpClient } from '@angular/common/http';\r\nimport { Component, OnInit } from '@angular/core';\r\nimport { BaseComponent } from 'src/app/core/controls/base-conrol/base.component';\r\n\r\n\r\n@Component({\r\n  selector: 'app-red',\r\n  templateUrl: './red.component.html',\r\n  styleUrls: ['./red.component.css']\r\n})\r\nexport class RedComponent extends BaseComponent implements OnInit {\r\n  constructor(private http: HttpClient) {\r\n    super();\r\n  }\r\n\r\n  ngOnInit(): void {\r\n    console.log('RedComponent.ngOnInit',this.http);\r\n  }\r\n\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2784,13 +2834,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-f55737673e56c8bdb0985141cee011eaf636ed76c372d3147aba446905f2682d94baf704edcd621951267479730fddf852f9b86330c643bb02bdc855f344404e",
+            "id": "module-AppModule-6425207007046ff48c83a7789150cceabc78442d367b0d3beb173285c35da0db850096234c59d93726e073a048e0ac44112cf04f7f1a2c9df05b620720fc94fd",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\n// import { OverlayModule } from '@angular/cdk/overlay';\nimport { ClickAwayDirective } from './core/directives/click-away.directive';\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DynamicFormComponent,\n    ComponentHostDirective,\n    ParentFilterPipe,\n    PopupComponent,\n    RedComponent,\n    MultiSelectComponent,\n    ClickAwayDirective\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    // OverlayModule,\n    FormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { BrowserModule } from '@angular/platform-browser';\r\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\r\nimport { AppRoutingModule } from './app-routing.module';\r\nimport { AppComponent } from './app.component';\r\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\r\nimport { ComponentHostDirective } from './core/component-host.directive';\r\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\r\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\r\nimport { PopupComponent } from './popup/popup.component';\r\nimport { RedComponent } from './sample/red/red.component';\r\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\r\n// import { OverlayModule } from '@angular/cdk/overlay';\r\nimport { ClickAwayDirective } from './core/directives/click-away.directive';\r\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\r\n\r\n@NgModule({\r\n  declarations: [\r\n    AppComponent,\r\n    DynamicFormComponent,\r\n    ComponentHostDirective,\r\n    ParentFilterPipe,\r\n    PopupComponent,\r\n    RedComponent,\r\n    MultiSelectComponent,\r\n    ClickAwayDirective\r\n  ],\r\n  imports: [\r\n    BrowserModule,\r\n    AppRoutingModule,\r\n    HttpClientModule,\r\n    ReactiveFormsModule,\r\n    // OverlayModule,\r\n    FormsModule\r\n  ],\r\n  providers: [],\r\n  bootstrap: [AppComponent]\r\n})\r\nexport class AppModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2853,13 +2903,13 @@
         },
         {
             "name": "AppRoutingModule",
-            "id": "module-AppRoutingModule-78922b3ae99d2c5249b333980bd5afde1b120b2cc6fedfd41b8b2cc90f279797cb4b22e183bf7e1d1dfab8c6100e77e7812c110234d81f866f544f28a3e18b15",
+            "id": "module-AppRoutingModule-4518c33195180c88b148f5ad346bbd509e37db201ff0191c9bd5d00989bc674a7e8476b2298b5f61b74b4fa3379b6d71a3615e2cc472074cf6e416b23941131b",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app-routing.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { RouterModule, Routes } from '@angular/router';\n\nconst routes: Routes = [];\n\n@NgModule({\n  imports: [RouterModule.forRoot(routes)],\n  exports: [RouterModule]\n})\nexport class AppRoutingModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\r\nimport { RouterModule, Routes } from '@angular/router';\r\n\r\nconst routes: Routes = [];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes)],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRoutingModule { }\r\n",
             "children": [
                 {
                     "type": "providers",
@@ -2908,7 +2958,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: true,\n  apiEndpoint: 'http://localhost:8080/api',\n  baseUrl: 'http://localhost:4200',\n}"
+                "defaultValue": "{\r\n  production: true,\r\n  apiEndpoint: 'http://localhost:8080/api',\r\n  baseUrl: 'http://localhost:4200',\r\n}"
             },
             {
                 "name": "environment",
@@ -2918,7 +2968,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "object",
-                "defaultValue": "{\n  production: false,\n  apiEndpoint: 'http://localhost:8080/api',\n  baseUrl: 'http://localhost:4200',\n}"
+                "defaultValue": "{\r\n  production: false,\r\n  apiEndpoint: 'http://localhost:8080/api',\r\n  baseUrl: 'http://localhost:4200',\r\n}"
             },
             {
                 "name": "require",
@@ -2937,7 +2987,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story<MultiSelectComponent>",
-                "defaultValue": "(args) => ({\n  props: args,\n  template: `\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  <form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n  `,\n})"
+                "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\r\n  <form #f=\"ngForm\" style=\"width:20rem\">\r\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\r\n                 </form> \r\n  `,\r\n})"
             },
             {
                 "name": "YourStory",
@@ -2984,7 +3034,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: true,\n  apiEndpoint: 'http://localhost:8080/api',\n  baseUrl: 'http://localhost:4200',\n}"
+                    "defaultValue": "{\r\n  production: true,\r\n  apiEndpoint: 'http://localhost:8080/api',\r\n  baseUrl: 'http://localhost:4200',\r\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -2996,7 +3046,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
-                    "defaultValue": "{\n  production: false,\n  apiEndpoint: 'http://localhost:8080/api',\n  baseUrl: 'http://localhost:4200',\n}"
+                    "defaultValue": "{\r\n  production: false,\r\n  apiEndpoint: 'http://localhost:8080/api',\r\n  baseUrl: 'http://localhost:4200',\r\n}"
                 }
             ],
             "src/stories/multi-select.stories.ts": [
@@ -3008,7 +3058,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story<MultiSelectComponent>",
-                    "defaultValue": "(args) => ({\n  props: args,\n  template: `\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\n  <form #f=\"ngForm\" style=\"width:20rem\">\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\n                 </form> \n  `,\n})"
+                    "defaultValue": "(args) => ({\r\n  props: args,\r\n  template: `\r\n  <p class=\"mt-3\" >Form value: {{ f.value | json }}</p>\r\n  <form #f=\"ngForm\" style=\"width:20rem\">\r\n  <app-multi-select ngModel name=\"userInput\" [options]=\"options\"> </app-multi-select>\r\n                 </form> \r\n  `,\r\n})"
                 },
                 {
                     "name": "YourStory",
@@ -3158,7 +3208,7 @@
                 "linktype": "component",
                 "name": "MultiSelectComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/21",
                 "status": "low"
             },
             {

@@ -32,9 +32,9 @@
 </span>
 
 
-  <span class="flex-col hidden" #dropdown>
-    <label *ngFor="let option of _options">
-      <input type="checkbox"  [checked]="selectedOptions.isSelected(option)" (change)="toggle(option)"  /> {{ option[label] }}
+  <span class="flex-col hidden shadow rounded overflow-auto h-60" #dropdown>
+    <label *ngFor="let option of _options" class="text-base hover:bg-gray-100 px-2 py-1.5 ">
+      <input class="w-4 h-4 mr-1" type="checkbox"  [checked]="selectedOptions.isSelected(option)" (change)="toggle(option)"  /> {{ option[label] }}
     </label>
   </span>
 

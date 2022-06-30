@@ -40,12 +40,12 @@ const Template: Story<MultiSelectComponent> = (args) => ({
 export const YourStory = Template.bind({});
 YourStory.args = {
   options: [
-    { value: '1', label: 'one' },
-    { value: '2', label: 'two' },
-    { value: '3', label: 'three' },
-    { value: '4', label: 'four' },
-    { value: '5', label: 'five' },
-    { value: '6', label: 'six' },
+    { value: '1', label: 'One' },
+    { value: '2', label: 'Two' },
+    { value: '3', label: 'Three' },
+    { value: '4', label: 'Four' },
+    { value: '5', label: 'Five' },
+    { value: '6', label: 'Six' },
   ]
   /* 👇 The args you need here will depend on your component */
 };
