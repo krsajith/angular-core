@@ -1,4 +1,7 @@
-<span (click)="isOpen = !isOpen" type="button" cdkOverlayOrigin #trigger="cdkOverlayOrigin"
+{{isOpen}}
+
+<div (clickAway)="hideDropDown()">
+<span (click)="showDropDown()" type="button" #target
   class="
     appearance-none
     rounded
@@ -28,14 +31,12 @@
   </svg>
 </span>
 
-<ng-template 
-  cdkConnectedOverlay
-  [cdkConnectedOverlayOrigin]="trigger"
-  [cdkConnectedOverlayOpen]="isOpen"
->
-  <span class="flex flex-col">
+
+  <span class="flex-col hidden" #dropdown>
     <label *ngFor="let option of _options">
       <input type="checkbox"  [checked]="selectedOptions.isSelected(option)" (change)="toggle(option)"  /> {{ option[label] }}
     </label>
   </span>
-</ng-template>
+
+</div>
+

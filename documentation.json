@@ -1125,12 +1125,12 @@
     "directives": [
         {
             "name": "ClickAwayDirective",
-            "id": "directive-ClickAwayDirective-a58a7e1b1252acb73711479f3a56c8339cbe73ed26ff756b47c6f878d746c224faeb3d27d0d0d584d049c6ebb647396df06cf5eae8bc7b797f79481e55d51857",
+            "id": "directive-ClickAwayDirective-6ebcd88260cfde73c5086f5401bae2e6694bea6b598e6d5b364b6b596b654b7d1ebcb3acc9f8d5fd9e1529a4969625f6ee4d31f19f14c0376df149595ced35e8",
             "file": "src/app/core/directives/click-away.directive.ts",
             "type": "directive",
             "description": "<p>Example Usage  &lt;a (clickAway)=&quot;showChildren=false&quot;/&gt;</p>\n",
             "rawdescription": "\n\nExample Usage  <a (clickAway)=\"showChildren=false\"/>\n",
-            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\n\n/**\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\n */\n@Directive({\n    selector: '[clickAway]'\n})\nexport class ClickAwayDirective {\n    constructor(private _elementRef : ElementRef) {\n        console.log('ClickAway Directive Constructor');\n    }\n \n    @Output()\n    public clickAway = new EventEmitter();\n \n    @HostListener('document:click', ['$event.target'])\n    public onClick(targetElement:HTMLElement) {\n        console.log('ClickAway Directive');\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\n        if (!clickedInside) {\n            this.clickAway.emit(null);\n        }\n    }\n}",
+            "sourceCode": "import {Directive, ElementRef, Output, EventEmitter, HostListener} from '@angular/core';\n\n/**\n *Example Usage  <a (clickAway)=\"showChildren=false\"/>\n */\n@Directive({\n    selector: '[clickAway]'\n})\nexport class ClickAwayDirective {\n    constructor(private _elementRef : ElementRef) {\n        console.log('ClickAway Directive Constructor');\n    }\n \n    @Output()\n    public clickAway = new EventEmitter();\n \n    @HostListener('document:click', ['$event.target'])\n    public onClick(targetElement:HTMLElement) {\n        console.log('ClickAway Directive');\n        const clickedInside = this._elementRef.nativeElement.contains(targetElement);\n        if (!clickedInside) {\n            this.clickAway.emit(targetElement);\n        }\n    }\n}",
             "selector": "[clickAway]",
             "providers": [],
             "inputsClass": [],
@@ -2232,7 +2232,7 @@
         },
         {
             "name": "MultiSelectComponent",
-            "id": "component-MultiSelectComponent-9b1973bcee0d3c22d3e7364c828bfbf486c7a09355e7183d3070f5e0f771c87fc1ef4b023a13461b8df0529dbb040c49d0cc6c5fd8b8dab3b5683287a84222fc",
+            "id": "component-MultiSelectComponent-3f960235eb9af84b98e42a83f0e553736575dc601d65370b6093f6cca472b6cf6759d1a12a39b630175a9f21dd56c4984245ed1158c44e524bed6f76b8fb69e7",
             "file": "src/app/core/multi-select/multi-select.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2267,7 +2267,7 @@
                     "name": "options",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
+                    "line": 43,
                     "type": "any[]",
                     "decorators": []
                 },
@@ -2375,7 +2375,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 49,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2504,7 +2504,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\nimport { Component, forwardRef, Input } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\n\n\n@Component({\n  selector: 'app-multi-select',\n  templateUrl: './multi-select.component.html',\n  styleUrls: ['./multi-select.component.css'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => MultiSelectComponent),\n      multi: true\n    }\n  ]  \n})\nexport class MultiSelectComponent extends BaseConrolComponent {\n\n  isOpen = false;\n  _options!: any[];\n  @Input() label: string = 'label';\n  @Input() value: string = 'value';\n\n  selectedOptions:SelectionModel<any> = new SelectionModel(true);\n  selectedLabel!: string | unknown;\n\n  constructor(){\n    super();\n    console.log(this.selectedOptions);\n  }\n\n  writeValue(value: any[]): void {\n    this.selectedOptions.select(value);\n    console.log('writeValue', value);\n  }\n  \n\n  @Input()\n  public set options(options: any[]) {\n    console.log('options', options);\n    this._options = options;\n    this.selectedOptions= new SelectionModel(true);\n  }\n\n  toggle(option: any) {\n    console.log(this.selectedOptions.selected);\n    this.selectedOptions.toggle(option);\n    this.onChange(this.selectedOptions.selected.map((o:any) => o[this.value]));\n    this.selectedLabel = this.selectedOptions.selected.map((o:any) => o[this.label]).join(', ');\n    \n  }\n}\n",
+            "sourceCode": "import { SelectionModel } from '@angular/cdk/collections';\nimport { Component, forwardRef, Input } from '@angular/core';\nimport { NG_VALUE_ACCESSOR } from '@angular/forms';\nimport { BaseConrolComponent } from '../controls/base-conrol/base-conrol.component';\nimport {computePosition, flip} from '@floating-ui/dom';\n\n@Component({\n  selector: 'app-multi-select',\n  templateUrl: './multi-select.component.html',\n  styleUrls: ['./multi-select.component.css'],\n  providers: [\n    {\n      provide: NG_VALUE_ACCESSOR,\n      useExisting: forwardRef(() => MultiSelectComponent),\n      multi: true\n    }\n  ]  \n})\nexport class MultiSelectComponent extends BaseConrolComponent {\n\n  isOpen = false;\n  _options!: any[];\n  @Input() label: string = 'label';\n  @Input() value: string = 'value';\n\n  selectedOptions:SelectionModel<any> = new SelectionModel(true);\n  selectedLabel!: string | unknown;\n\n  constructor(){\n    super();\n    console.log(this.selectedOptions);\n  }\n\n  writeValue(value: any[]): void {\n    if(value && value.length>0){\n      this.selectedOptions.select(value);\n      console.log('writeValue', value);\n    }\n  }\n  \n\n  @Input()\n  public set options(options: any[]) {\n    console.log('options', options);\n    this._options = options;\n    this.selectedOptions= new SelectionModel(true);\n  }\n\n  toggle(option: any) {\n    console.log(this.selectedOptions.selected);\n    this.selectedOptions.toggle(option);\n    this.onChange(this.selectedOptions.selected.map((o:any) => o[this.value]));\n    this.selectedLabel = this.selectedOptions.selected.map((o:any) => o[this.label]).join(', ');\n    \n  }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -2539,7 +2539,7 @@
                             }
                         ],
                         "returnType": "void",
-                        "line": 41,
+                        "line": 43,
                         "jsdoctags": [
                             {
                                 "name": "options",
@@ -2554,7 +2554,7 @@
                     }
                 }
             },
-            "templateData": "<span (click)=\"isOpen = !isOpen\" type=\"button\" cdkOverlayOrigin #trigger=\"cdkOverlayOrigin\"\n  class=\"\n    appearance-none\n    rounded\n    border border-gray-500\n    px-2\n    py-2\n    text-sm text-gray-600\n    hover:border-blue-300\n    focus:border-blue-400\n    focus:outline-none\n    flex\n  \"\n>\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\n\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    class=\"h-5 w-5\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n  >\n    <path\n      fill-rule=\"evenodd\"\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\n      clip-rule=\"evenodd\"\n    />\n  </svg>\n</span>\n\n<ng-template \n  cdkConnectedOverlay\n  [cdkConnectedOverlayOrigin]=\"trigger\"\n  [cdkConnectedOverlayOpen]=\"isOpen\"\n>\n  <span class=\"flex flex-col\">\n    <label *ngFor=\"let option of _options\">\n      <input type=\"checkbox\"  [checked]=\"selectedOptions.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\n    </label>\n  </span>\n</ng-template>\n"
+            "templateData": "<div (clickAway)=\"isOpen=false\">\n<span (click)=\"isOpen = !isOpen\" type=\"button\" \n  class=\"\n    appearance-none\n    rounded\n    border border-gray-500\n    px-2\n    py-2\n    text-sm text-gray-600\n    hover:border-blue-300\n    focus:border-blue-400\n    focus:outline-none\n    flex\n  \"\n>\n  <label class=\"flex-grow\">{{selectedLabel}}</label>\n\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    class=\"h-5 w-5\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n  >\n    <path\n      fill-rule=\"evenodd\"\n      d=\"M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z\"\n      clip-rule=\"evenodd\"\n    />\n  </svg>\n</span>\n\n\n  <span class=\"flex flex-col\">\n    <label *ngFor=\"let option of _options\">\n      <input type=\"checkbox\"  [checked]=\"selectedOptions.isSelected(option)\" (change)=\"toggle(option)\"  /> {{ option[label] }}\n    </label>\n  </span>\n\n</div>"
         },
         {
             "name": "PopupComponent",
@@ -2784,13 +2784,13 @@
     "modules": [
         {
             "name": "AppModule",
-            "id": "module-AppModule-12df67de66467d22c1ca81e259ac8dc72b1e7da7075a95f8bfdcfc7575cd48309533bd3d49b9d2f3926bf3db5db1304348cae23f7095d71ae010ab21525a0702",
+            "id": "module-AppModule-f55737673e56c8bdb0985141cee011eaf636ed76c372d3147aba446905f2682d94baf704edcd621951267479730fddf852f9b86330c643bb02bdc855f344404e",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
             "file": "src/app/app.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\nimport { OverlayModule } from '@angular/cdk/overlay';\nimport { ClickAwayDirective } from './core/directives/click-away.directive';\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DynamicFormComponent,\n    ComponentHostDirective,\n    ParentFilterPipe,\n    PopupComponent,\n    RedComponent,\n    MultiSelectComponent,\n    ClickAwayDirective\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    OverlayModule,\n    FormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { BrowserModule } from '@angular/platform-browser';\nimport { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';\nimport { AppRoutingModule } from './app-routing.module';\nimport { AppComponent } from './app.component';\nimport { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';\nimport { ComponentHostDirective } from './core/component-host.directive';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { ParentFilterPipe } from './core/pipe/parent-filter.pipe';\nimport { PopupComponent } from './popup/popup.component';\nimport { RedComponent } from './sample/red/red.component';\nimport { MultiSelectComponent } from './core/multi-select/multi-select.component';\n// import { OverlayModule } from '@angular/cdk/overlay';\nimport { ClickAwayDirective } from './core/directives/click-away.directive';\n// import { ClickAwayDirective } from './core/directives/click-away.directive';\n\n@NgModule({\n  declarations: [\n    AppComponent,\n    DynamicFormComponent,\n    ComponentHostDirective,\n    ParentFilterPipe,\n    PopupComponent,\n    RedComponent,\n    MultiSelectComponent,\n    ClickAwayDirective\n  ],\n  imports: [\n    BrowserModule,\n    AppRoutingModule,\n    HttpClientModule,\n    ReactiveFormsModule,\n    // OverlayModule,\n    FormsModule\n  ],\n  providers: [],\n  bootstrap: [AppComponent]\n})\nexport class AppModule { }\n",
             "children": [
                 {
                     "type": "providers",

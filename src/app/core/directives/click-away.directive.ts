@@ -20,7 +20,7 @@ export class ClickAwayDirective {
         console.log('ClickAway Directive');
         const clickedInside = this._elementRef.nativeElement.contains(targetElement);
         if (!clickedInside) {
-            this.clickAway.emit(null);
+            this.clickAway.emit(targetElement);
         }
     }
 }
