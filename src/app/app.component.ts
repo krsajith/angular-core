@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // this.init();
+    this.init();
 
     // this.popup.show(RedComponent);
 

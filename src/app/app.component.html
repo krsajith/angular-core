@@ -7,7 +7,7 @@
 <app-popup></app-popup>
 
 
-<ng-template appComponentHost></ng-template>
+
 
 <input type="checkbox" (change)="test($event)"> Test
 
@@ -17,3 +17,9 @@
     <app-multi-select [(ngModel)]="selection" [options]="options"> </app-multi-select>
 
                    <p class="mt-3" >Form value: {{selection | json }}</p>
+
+
+<div class="bg-slate-300 p-4">
+    <ng-template appComponentHost></ng-template>
+
+</div>                   
