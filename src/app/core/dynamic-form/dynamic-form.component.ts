@@ -4,7 +4,7 @@ import { Field } from 'src/app/core/domain/field';
 import { FormControl, FormGroup } from '@angular/forms';
 import { StoreService } from '../store/store.service';
 import { Store } from '../store/store';
-import { Observable } from 'rxjs';
+import { EMPTY, filter, map, Observable } from 'rxjs';
 
 @Component({
   selector: 'app-dynamic-form',
@@ -16,9 +16,10 @@ export class DynamicFormComponent implements OnInit {
   formGroup!: FormGroup;
   page!: Page;
   stores: { [k: string]: Store<any> } = {};
-  parentValues: { [k: string]: Observable<string> } = {};
+  values: { [k: string]: Observable<any> } = {};
+  parentValueChanges: { [k: string]: Observable<string> } = {};
 
-  constructor(private storeService: StoreService) {}
+  constructor(private storeService: StoreService) { }
 
   ngOnInit(): void {
     console.log('DynamicFormComponent.ngOnInit()');
@@ -31,6 +32,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   private async buildForm(fields: Field[]) {
+    console.table(fields);
     const parentFields = new Set(
       fields
         .filter((field) => field.parentField !== undefined)
@@ -40,7 +42,8 @@ export class DynamicFormComponent implements OnInit {
     this.formGroup = new FormGroup({});
     for (let field of fields) {
       if (field.store) {
-        this.stores[field.store]= this.storeService.getState(field.store);
+        this.stores[field.name] = this.storeService.getState(field.store);
+        this.values[field.name] = field.parentField ? EMPTY : this.storeService.getState(field.store).values;
       }
 
       const formControl = new FormControl(field.value);
@@ -48,10 +51,21 @@ export class DynamicFormComponent implements OnInit {
 
       //any other field depends on this field
       if (parentFields.has(field.name)) {
-        this.parentValues[field.name]=formControl.valueChanges;
+        this.parentValueChanges[field.name] = formControl.valueChanges;
       }
     }
 
-    console.log(this.formGroup,this.stores);
+    fields.filter(field => field.parentField).forEach(field => {
+      this.parentValueChanges[field.parentField].subscribe(parentValue => {
+        this.values[field.name] = this.stores[field.name].values.pipe(
+          map(items =>
+            items.filter(item => item[field.joinColumn] === parentValue)))
+
+            let fieldValue:any = {};
+            fieldValue[field.name]=undefined;
+            this.formGroup.patchValue(fieldValue);
+      });
+
+    })
   }
 }

@@ -18,10 +18,10 @@
             "type": "select",
             "label": "Country",
             "store": "countries",
-            "parentField": "region",
-            "jonColumn": "region",
             "valueField":"code",
-            "labelField":"name"
+            "labelField":"name",
+            "parentField": "region",
+            "joinColumn": "region"
         }
     ]
 }

@@ -8,6 +8,7 @@ export interface Field {
     order: number;
     controlType: string;
     parentField:string
+    joinColumn:string;
     labelField:string
     valueField:string
 }

@@ -1,6 +1,7 @@
+import { StoreType } from "./stor-type";
 
 export interface StoreConfig {
-    storeType:  string;
+    storeType:  StoreType;
     baseUrl:    string;
     path:       string;
     keyField:   string;

@@ -4,15 +4,8 @@ import { Store } from "./store";
 import { StoreConfig } from "./store-config";
 
 export class BasicApiStore implements Store<any> {
-    
+    values!: Observable<any[]>;
     constructor(private storeConfig:StoreConfig,apiService:ApiService) {
 
-    }
-    filter(filter: any): Observable<any> {
-        throw new Error("Method not implemented.");
-    }
-
-    values(): Observable<any> {
-        throw new Error("Method not implemented.");
     }
 }

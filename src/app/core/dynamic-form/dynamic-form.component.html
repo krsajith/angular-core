@@ -12,7 +12,7 @@
             *ngSwitchCase="'select'"
             formControlName="{{ field.name }}">
             <option selected disabled value=null>Select</option>
-            <option *ngFor="let value of stores[field.store].values() | async |  parentFilter: (parentValues[field.parentField] | async)" value="{{value[field.valueField]}}" >{{value[field.labelField]}}</option>
+            <option *ngFor="let value of values[field.name] | async" value="{{value[field.valueField]}}" >{{value[field.labelField]}}</option>
         </select>
 
         </label>

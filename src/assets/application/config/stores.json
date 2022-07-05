@@ -1,12 +1,12 @@
 {
     "countries": {
-        "storeType": "JsonStore",
+        "storeType": "json",
         "path": "/assets/application/data/countries.json",
         "keyField":"code",
         "labelField":"name"
     },
     "regions": {
-        "storeType": "JsonStore",
+        "storeType": "json",
         "path": "/assets/application/data/regions.json",
         "keyField":"code",
         "labelField":"name"        
