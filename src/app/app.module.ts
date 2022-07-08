@@ -15,7 +15,6 @@ import { ClickAwayDirective } from './core/directives/click-away.directive';
 import { TableComponent } from './core/table/table.component';
 import { TdComponent } from './core/table/td/td.component';
 import { TrComponent } from './core/table/tr/tr.component';
-import { QuillEditorComponent } from './quill-editor/quill-editor.component';
 // import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
@@ -31,7 +30,6 @@ import { QuillEditorComponent } from './quill-editor/quill-editor.component';
     TableComponent,
     TdComponent,
     TrComponent,
-    QuillEditorComponent
   ],
   imports: [
     BrowserModule,
