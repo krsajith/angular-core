@@ -12,6 +12,10 @@ import { RedComponent } from './sample/red/red.component';
 import { MultiSelectComponent } from './core/multi-select/multi-select.component';
 // import { OverlayModule } from '@angular/cdk/overlay';
 import { ClickAwayDirective } from './core/directives/click-away.directive';
+import { TableComponent } from './core/table/table.component';
+import { TdComponent } from './core/table/td/td.component';
+import { TrComponent } from './core/table/tr/tr.component';
+import { QuillEditorComponent } from './quill-editor/quill-editor.component';
 // import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
@@ -23,7 +27,11 @@ import { ClickAwayDirective } from './core/directives/click-away.directive';
     PopupComponent,
     RedComponent,
     MultiSelectComponent,
-    ClickAwayDirective
+    ClickAwayDirective,
+    TableComponent,
+    TdComponent,
+    TrComponent,
+    QuillEditorComponent
   ],
   imports: [
     BrowserModule,
