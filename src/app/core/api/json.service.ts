@@ -15,7 +15,7 @@ export class JsonService {
     { code: 'PT', name: 'Portuguese' },
   ]
 
-  constructor(private http: HttpClient) {
+  constructor(public http: HttpClient) {
   }
 
   get<T>(path: string): Observable<T> {

@@ -6,7 +6,8 @@ import { firstValueFrom } from 'rxjs';
 import { JsonService } from './core/api/json.service';
 import { PopupComponent } from './popup/popup.component';
 import { RedComponent } from './sample/red/red.component';
-import {SelectionModel} from '@angular/cdk/collections'
+import { SelectionModel } from '@angular/cdk/collections'
+import { HttpHeaders } from '@angular/common/http';
 
 
 @Component({
@@ -23,17 +24,17 @@ export class AppComponent implements OnInit {
 
   model = new SelectionModel(true);
 
-  data = {id: 1, name: 'sajith'};
+  data = { id: 1, name: 'sajith' };
 
   selection = [];
 
   options = [
-    {value:'1',label:'One'},
-    {value:'2',label:'Two'},
-    {value:'3',label:'Three'},
-    {value:'4',label:'Four'},
-    {value:'5',label:'Five'},
-    {value:'6',label:'Six'},
+    { value: '1', label: 'One' },
+    { value: '2', label: 'Two' },
+    { value: '3', label: 'Three' },
+    { value: '4', label: 'Four' },
+    { value: '5', label: 'Five' },
+    { value: '6', label: 'Six' },
   ]
 
   constructor(private jsonService: JsonService) {
@@ -50,19 +51,26 @@ export class AppComponent implements OnInit {
     model.changed.subscribe(() => {
       console.log(model.selected);
     });
-    
-    
+
+
     model.toggle("1");
     model.toggle("8");
     model.toggle("1");
     // console.log(model.selected);
 
-    
+
 
   }
 
 
   async init() {
+    this.jsonService.http.get('/assets/application/pages/sample-page.js', {
+      responseType: 'text',
+    }).subscribe(text => {
+      console.log(text);
+    });
+
+
     const viewContainerRef = this.componentHost.viewContainerRef;
     viewContainerRef.clear();
 
@@ -77,7 +85,7 @@ export class AppComponent implements OnInit {
   }
 
   test($event: any) {
-   this.model.toggle(this.data);
+    this.model.toggle(this.data);
   }
 
 }
