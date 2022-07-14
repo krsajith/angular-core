@@ -6,7 +6,7 @@ import { StoreConfig } from './store-config';
 
 export class JsonStore implements Store<any> {
     protected _list$ = new BehaviorSubject<any[]>([]);
-    values = this._list$.asObservable();
+    values$ = this._list$.asObservable();
 
     constructor(
         private storeConfig: StoreConfig,

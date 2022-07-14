@@ -61,7 +61,7 @@ export class DynamicFormComponent implements OnInit {
 
     if (field.store) {
       this.stores[field.name] = this.storeService.getState(field.store);
-      this.values[field.name] = field.parentField ? EMPTY : this.storeService.getState(field.store).values;
+      this.values[field.name] = field.parentField ? EMPTY : this.storeService.getState(field.store).values$;
     }
     return formControl;
   }
@@ -79,7 +79,7 @@ export class DynamicFormComponent implements OnInit {
   }
 
   private adddParentFilter(field: Field) {
-    this.values[field.name] = this.stores[field.name].values.pipe(
+    this.values[field.name] = this.stores[field.name].values$.pipe(
       combineLatestWith(this.parentValueChanges[field.parentField]),
       map(([items, parentValue]) => items.filter(item => item[field.joinColumn] === parentValue))
     );

@@ -1,7 +1,7 @@
 <ng-container *ngIf="ready; else loading">
   <form [formGroup]="formGroup">
-    <ng-container *ngFor="let field of page.fields; index as i">
-      <div [ngSwitch]="field.type">
+    <div *ngFor="let field of page.fields; index as i">
+      <ng-container [ngSwitch]="field.type">
         <label>{{ field.label }}<br>
           <input
             *ngSwitchCase="'text'"
@@ -16,8 +16,8 @@
         </select>
 
         </label>
-      </div>
-    </ng-container>
+      </ng-container>
+    </div>
   </form>
   {{ formGroup.value | json }}
 </ng-container>
