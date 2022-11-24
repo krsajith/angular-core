@@ -1,0 +1,20 @@
+/* body > main > app-root > app-popup > div > app-hello > div {
+    padding: 2rem;
+    background-color: blueviolet;
+} */
+
+/* body > main > app-root > app-popup > div > app-hello > div */
+
+.popup-child {
+    position: absolute;
+    width: min-content;
+    background-color: #9e9e9e;
+    /* height: 100vh; */
+    right: -100%;
+    transition: 300ms;
+}
+
+
+.isVisible {
+    right: 0;
+}

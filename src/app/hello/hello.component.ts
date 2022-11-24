@@ -9,7 +9,7 @@ import { BaseComponent } from '../core/controls/base-conrol/base.component';
 })
 export class HelloComponent extends BaseComponent implements OnInit,AfterViewInit {
 
-  pipe!:PipeTransform;
+  customPipe!:PipeTransform;
   today= new Date();
 
   constructor(private cd:ChangeDetectorRef) {
@@ -17,12 +17,13 @@ export class HelloComponent extends BaseComponent implements OnInit,AfterViewIni
   }
   ngAfterViewInit(): void {
     console.log('start animation');
-    
-    setTimeout(() => {
-      this.isVisible=true;
-      this.cd.detectChanges();
+    this.isVisible=true;
+    this.cd.detectChanges();
+    // setTimeout(() => {
+    //   this.isVisible=true;
+    //   this.cd.detectChanges();
         
-    }, 50);
+    // }, 50);
   }
 
   ngOnInit(): void {
@@ -30,6 +31,6 @@ export class HelloComponent extends BaseComponent implements OnInit,AfterViewIni
 
   override init(config:any){
     super.init(config);
-    this.pipe=config.pipe;
+    this.customPipe=config.pipe;
   }
 }

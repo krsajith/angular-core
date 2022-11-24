@@ -1,13 +1,5 @@
-<div *ngIf="visible" class="inset-0 bg-slate-500/20 absolute overflow-hidden grid place-items-center" (click)="visible=false" >
-
-    <!-- <ng-container appComponentHost></ng-container> -->
-
-    <!-- <div appComponentHost>
-    
-    </div>  -->
-
-    <ng-template appComponentHost></ng-template>
-    
+<div *ngIf="visible" class="inset-0  absolute overflow-hidden grid popup" (click)="visible=false">
+    <div class="popup-child" [ngClass]="{'isVisible': childVisible}">
+        <ng-container appComponentHost></ng-container>
+    </div>
 </div>
-
-

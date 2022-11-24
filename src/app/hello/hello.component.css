@@ -1,18 +1,17 @@
-/* .hello {
+ .hello {
     width: 40rem;
     background-color: #9e9e9e;
-    height: 100vh;
-    right: -100%;
-    position: absolute;
-    transition: 300ms;
+    height: 10vh;
+    /* right: -100%; */
+    /* transition: 300ms; */
 }
 
-.isVisible {
+/* .isVisible {
     right: 0;
-} */
+}  */
 
 
- .hello {
+ /* .hello {
     width: 40vw;
     background-color: #9e9e9e;
     height: 30vh;
@@ -22,4 +21,4 @@
 
 .isVisible {
     opacity: 1;
-} 
+}  */
