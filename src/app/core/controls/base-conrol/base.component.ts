@@ -7,6 +7,7 @@ import { Subject } from 'rxjs';
 export class BaseComponent implements OnDestroy {
 
   destroy$ = new Subject<boolean>();
+  isVisible = false;
 
 
   ngOnDestroy() {
@@ -14,5 +15,8 @@ export class BaseComponent implements OnDestroy {
     this.destroy$.complete();
   }
 
+  async init(){
+    this.isVisible=true;  
+  }
 
 }

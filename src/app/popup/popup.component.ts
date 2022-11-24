@@ -1,33 +1,40 @@
-import { Component, OnInit, Type, ViewChild } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Type, ViewChild } from '@angular/core';
 import { ComponentHostDirective } from '../core/component-host.directive';
 import { BaseComponent } from '../core/controls/base-conrol/base.component';
 
 @Component({
   selector: 'app-popup',
   templateUrl: './popup.component.html',
-  styleUrls: ['./popup.component.css']
+  styleUrls: ['./popup.component.css'],
+  changeDetection:ChangeDetectionStrategy.OnPush
 })
-export class PopupComponent implements OnInit {
+export class PopupComponent {
 
-  @ViewChild(ComponentHostDirective, { static: false }) componentHost!: ComponentHostDirective;
 
   visible = false;
+  baseComponent!: Type<BaseComponent>;
 
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private cd:ChangeDetectorRef) {
+    
   }
 
-  show(baseComponent:Type<BaseComponent>): void {
-
+  show(baseComponent: Type<BaseComponent>): void {
+    this.baseComponent = baseComponent;
     this.visible = true;
-    setTimeout(() => {
-      const viewContainerRef = this.componentHost.viewContainerRef;
-      viewContainerRef.clear();
-      const componentRef = viewContainerRef.createComponent< BaseComponent>(baseComponent);
-        
-    }, 300);
-   
+    this.cd.detectChanges();
+
   }
 
+  // @ViewChild(ComponentHostDirective, { static: false }) componentHost!: ComponentHostDirective;
+
+
+  @ViewChild(ComponentHostDirective, { static: false }) set someDummySetterName(componentHost: ComponentHostDirective) {
+    if(!componentHost) return;
+    const viewContainerRef = componentHost.viewContainerRef;
+    viewContainerRef.clear();
+    const componentRef = viewContainerRef.createComponent<BaseComponent>(this.baseComponent);
+    // this.cd.detectChanges();
+    // componentRef.instance.init();
+    this.cd.detectChanges();
+  }
 }

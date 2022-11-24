@@ -8,6 +8,7 @@ import { PopupComponent } from './popup/popup.component';
 import { RedComponent } from './sample/red/red.component';
 import { SelectionModel } from '@angular/cdk/collections'
 import { HttpHeaders } from '@angular/common/http';
+import { HelloComponent } from './hello/hello.component';
 
 
 @Component({
@@ -82,6 +83,10 @@ export class AppComponent implements OnInit {
 
   showPopup() {
     this.popup.show(RedComponent)
+  }
+
+  showPopup2() {
+    this.popup.show(HelloComponent)
   }
 
   test($event: any) {

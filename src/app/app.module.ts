@@ -15,6 +15,7 @@ import { ClickAwayDirective } from './core/directives/click-away.directive';
 import { TableComponent } from './core/table/table.component';
 import { TdComponent } from './core/table/td/td.component';
 import { TrComponent } from './core/table/tr/tr.component';
+import { HelloComponent } from './hello/hello.component';
 // import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
@@ -30,6 +31,7 @@ import { TrComponent } from './core/table/tr/tr.component';
     TableComponent,
     TdComponent,
     TrComponent,
+    HelloComponent,
   ],
   imports: [
     BrowserModule,
