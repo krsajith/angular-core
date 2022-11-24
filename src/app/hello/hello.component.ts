@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, PipeTransform } from '@angular/core';
 import { BaseComponent } from '../core/controls/base-conrol/base.component';
 
 @Component({
@@ -8,6 +8,9 @@ import { BaseComponent } from '../core/controls/base-conrol/base.component';
   changeDetection:ChangeDetectionStrategy.OnPush
 })
 export class HelloComponent extends BaseComponent implements OnInit,AfterViewInit {
+
+  pipe!:PipeTransform;
+  today= new Date();
 
   constructor(private cd:ChangeDetectorRef) {
     super()
@@ -25,4 +28,8 @@ export class HelloComponent extends BaseComponent implements OnInit,AfterViewIni
   ngOnInit(): void {
   }
 
+  override init(config:any){
+    super.init(config);
+    this.pipe=config.pipe;
+  }
 }

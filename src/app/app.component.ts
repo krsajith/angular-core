@@ -9,6 +9,7 @@ import { RedComponent } from './sample/red/red.component';
 import { SelectionModel } from '@angular/cdk/collections'
 import { HttpHeaders } from '@angular/common/http';
 import { HelloComponent } from './hello/hello.component';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -86,7 +87,7 @@ export class AppComponent implements OnInit {
   }
 
   showPopup2() {
-    this.popup.show(HelloComponent)
+    this.popup.show(HelloComponent,{pipe:new DatePipe('en-US')})
   }
 
   test($event: any) {

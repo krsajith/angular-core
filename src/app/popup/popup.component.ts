@@ -13,14 +13,16 @@ export class PopupComponent {
 
   visible = false;
   baseComponent!: Type<BaseComponent>;
+  config: any;
 
   constructor(private cd:ChangeDetectorRef) {
     
   }
 
-  show(baseComponent: Type<BaseComponent>): void {
+  show(baseComponent: Type<BaseComponent>,config?:any): void {
     this.baseComponent = baseComponent;
     this.visible = true;
+    this.config=config;
     this.cd.detectChanges();
 
   }
@@ -34,7 +36,7 @@ export class PopupComponent {
     viewContainerRef.clear();
     const componentRef = viewContainerRef.createComponent<BaseComponent>(this.baseComponent);
     // this.cd.detectChanges();
-    // componentRef.instance.init();
+    componentRef.instance.init(this.config);
     this.cd.detectChanges();
   }
 }

@@ -15,7 +15,7 @@ export class BaseComponent implements OnDestroy {
     this.destroy$.complete();
   }
 
-  async init(){
+  init(data:any){
     this.isVisible=true;  
   }
 
