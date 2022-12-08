@@ -3,10 +3,10 @@
     <div *ngFor="let field of page.fields; index as i">
       <ng-container [ngSwitch]="field.type">
         <label>{{ field.label }}<br>
-          <input
+          <!-- <input
             *ngSwitchCase="'text'"
             formControlName="{{ field.name }}"
-            type="text"/>
+            type="text"/> -->
 
           <select
             *ngSwitchCase="'select'"
@@ -15,6 +15,7 @@
             <option *ngFor="let value of values[field.name] | async" value="{{value[field.valueField]}}" >{{value[field.labelField]}}</option>
         </select>
 
+        <app-tao-input *ngSwitchDefault formControlName="{{ field.name }}"></app-tao-input>>
         </label>
       </ng-container>
     </div>

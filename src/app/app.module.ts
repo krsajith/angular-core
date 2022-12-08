@@ -16,6 +16,10 @@ import { TableComponent } from './core/table/table.component';
 import { TdComponent } from './core/table/td/td.component';
 import { TrComponent } from './core/table/tr/tr.component';
 import { HelloComponent } from './hello/hello.component';
+import { TaoInputComponent } from './tao-input/tao-input.component';
+import { Custom1Component } from './custom1/custom1.component';
+import { Custom2Component } from './custom2/custom2.component';
+import { CustomParentComponent } from './custom-parent/custom-parent.component';
 // import { ClickAwayDirective } from './core/directives/click-away.directive';
 
 @NgModule({
@@ -32,6 +36,10 @@ import { HelloComponent } from './hello/hello.component';
     TdComponent,
     TrComponent,
     HelloComponent,
+    TaoInputComponent,
+    Custom1Component,
+    Custom2Component,
+    CustomParentComponent,
   ],
   imports: [
     BrowserModule,

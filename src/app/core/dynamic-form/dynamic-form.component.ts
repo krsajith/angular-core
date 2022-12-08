@@ -47,6 +47,8 @@ export class DynamicFormComponent implements OnInit {
       }
     }
     this.addParentFilters(fields);
+
+    
   }
 
 

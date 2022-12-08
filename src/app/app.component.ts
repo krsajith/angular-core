@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, Type, ViewChild } from '@angular/core';
 import { ComponentHostDirective } from './core/component-host.directive';
 import { DynamicFormComponent } from './core/dynamic-form/dynamic-form.component';
 import { Page } from "src/app/core/domain/page";
@@ -10,6 +10,8 @@ import { SelectionModel } from '@angular/cdk/collections'
 import { HttpHeaders } from '@angular/common/http';
 import { HelloComponent } from './hello/hello.component';
 import { DatePipe } from '@angular/common';
+import { Custom1Component } from './custom1/custom1.component';
+import { BaseComponent } from './core/controls/base-conrol/base.component';
 
 
 @Component({
@@ -39,12 +41,18 @@ export class AppComponent implements OnInit {
     { value: '6', label: 'Six' },
   ]
 
+  custom1Component:  Type<BaseComponent> = Custom1Component;
+
+  
+
   constructor(private jsonService: JsonService) {
 
   }
 
   ngOnInit(): void {
     this.init();
+
+    
 
     // this.popup.show(RedComponent);
 
@@ -83,7 +91,7 @@ export class AppComponent implements OnInit {
   }
 
   showPopup() {
-    this.popup.show(RedComponent)
+    this.popup.show(RedComponent,{fields:[{name:'firstname'}]})
   }
 
   showPopup2() {

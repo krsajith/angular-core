@@ -15,7 +15,7 @@ export class BaseComponent implements OnDestroy {
     this.destroy$.complete();
   }
 
-  init(data:any){
+  init(config:any){
     // this.isVisible=true;  
   }
 

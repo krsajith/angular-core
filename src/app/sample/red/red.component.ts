@@ -9,12 +9,17 @@ import { BaseComponent } from 'src/app/core/controls/base-conrol/base.component'
   styleUrls: ['./red.component.css']
 })
 export class RedComponent extends BaseComponent implements OnInit {
+  config: any;
   constructor(private http: HttpClient) {
     super();
   }
 
   ngOnInit(): void {
     console.log('RedComponent.ngOnInit',this.http);
+  }
+
+  override init(config:any){
+    this.config=config; 
   }
 
 }
