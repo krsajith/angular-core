@@ -1,1 +1,1 @@
-<p>custom1 works!</p>
+<input [(ngModel)]="value" (keyup)="pubsub.publishToStore('account.currency',value)">
